@@ -1,0 +1,123 @@
+body{
+    margin: 0;
+    margin-top: 4%;
+    min-height: calc(100vh - 152px);
+}
+b{
+ font-size:  calc(0.5em + 1vw);
+ line-height: 1em;
+}
+
+.titulo{
+    margin-top: 70px;
+    text-align: center;
+}
+#estado{
+    margin-top: auto;
+    margin-right: auto;
+    margin-left: 0;
+    background:rgb(39, 155, 233);
+}
+#estado input{
+    padding-right: 5px;
+    max-width: 130px;
+    color: rgb(255, 255, 255);
+}
+ .container{
+     margin: auto;
+     margin-bottom: 1em;
+     padding: 0%;
+     width:50%;
+     height: 100%;
+     background:rgb(39, 155, 233);
+     color: white;
+   }
+   input{
+    font-size:  calc(0.5em + 1vw);
+    line-height: 1em;
+    background-color:transparent;
+    border-style: none;
+    color: black;
+    margin-left: 10px;
+   }
+   textarea{
+    background-color:transparent;
+    color: black;
+    max-width: 100%;
+    min-width: 98%;
+    min-height: 80px;
+    border:solid rgb(255, 255, 255) 1px;
+    padding-left: 15px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size:  calc(0.5em + 1vw);
+    line-height: 1em;
+   }
+   textarea::placeholder{
+    color: black;
+   }
+   #cont1{
+    width:100%;
+    margin: 0%;
+    padding-top: 1em;
+    padding-left: 10px;
+}
+   #cont2{
+     width:100%;
+     margin: 0%;
+     padding-top: 1em;
+     padding-left: 10px;
+     border-top:solid rgb(255, 255, 255);
+     border-bottom:solid rgb(255, 255, 255);
+   }
+    #cont3{
+        width:100%;
+        margin: 0%;
+        padding-top: 1em;
+        padding-left: 10px;
+        border-bottom:solid rgb(255, 255, 255);
+   }
+    #cont4{
+        width:100%;
+        margin: 0%;
+        padding-top: 1em;
+        padding-left: 10px;
+   }
+.btn-contenedor{
+    display: flex;
+    flex-direction: row;
+    max-width: 50%;
+    margin: auto;
+}
+
+#campof{
+    max-width: 182px;
+}
+.btn-contenedor2{
+    min-width: 100%;
+}
+#btnPublicar{
+    transform: translate(-50%);
+    margin-left: 50%;
+    margin-bottom: 1em;
+}
+
+@media only screen and (max-width:700px){
+
+    body{
+        margin-top: 0;
+    }
+    .titulo{
+        margin-top: 0;
+    }
+    .container{
+        width:80%;
+      }
+      #estado input{
+        max-width: 90px;
+    }
+      .btn-contenedor{
+        max-width: 80%;
+        margin: auto;
+    }
+}  

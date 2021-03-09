@@ -1,0 +1,41 @@
+
+.container{
+    min-height: calc(100vh - 152px);
+    min-width: 100%;
+    margin-top: 4%;
+    padding : 40px;
+    display:flex;
+}
+.item{
+    min-width: 30%;
+    padding-right: 40px;
+}
+.logo img{
+    width:100%;
+}
+.tab-content{
+    text-align : justify;
+    margin: 2%;
+}
+
+@media only screen and (max-width:700px){
+
+    .container{
+        flex-direction: column;
+        margin-top: 0;
+        padding : 10px;
+    }
+    .item{
+        width: 100%;
+        display:flex;
+      justify-content: center;
+    }
+    .list-group{
+        width: 49%;
+    }
+    .logo{
+        position: relative;
+        margin-top: 20px;
+        right: -20px;
+    }
+}

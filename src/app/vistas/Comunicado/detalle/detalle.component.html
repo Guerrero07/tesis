@@ -1,0 +1,44 @@
+<body>
+    <h4 class="titulo">Detalles de Comunicado</h4>
+    <div class="btn-contenedor">
+        <div id="estado">
+            <input type="text" value="Pendiente" disabled/>
+        </div>
+        <button type="button" class="btn btn-success" id="btnEditar"><span class="glyphicon glyphicon-edit"></span>Editar</button>
+    </div>
+    <div class="container" id="detalle">
+        <div class="form-row" id="cont1">
+            <div class="form-group">
+                <b>Tipo de Comunicado:</b>
+                <input type="text" id="campo" disabled value="Invitación"/>
+            </div>
+        </div>
+        <div class="form-row" id="cont2">
+            <div class="form-group">
+                <b>Emisor:</b>
+                <input type="text" id="campo" disabled value="Dirección"/>
+            </div>
+                <div class="form-group" id="campo2">
+                    <b>Destinatario:</b>
+                    <input type="text" id="campo" disabled value="1-A, Secundaria"/>
+                </div>
+            </div>
+        <div class="form-colum" id="cont3">
+            <div class="form-group">
+                <b>Fecha del Evento:</b>
+                <input type="date" id="campof" disabled value="07/10/2017"/>
+            </div>
+                <div class="form-group" id="campo2">
+                    <b>Hora:</b>
+                    <input type="time" id="campoh" disabled value="10:00"/>
+                </div>
+            </div>
+        <div class="form-row" id="cont4">
+                <b>Descripción:</b>
+                <textarea id="campo-descripcion" disabled>aqui va la descripcion del comunicado</textarea>
+        </div>
+    </div>
+    <div class="btn-contenedor2">
+        <button type="button" class="btn btn-outline-primary" id="btnPublicar" onclick="location.href ='lista'">Publicar</button>
+    </div>
+</body>

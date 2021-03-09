@@ -1,0 +1,19 @@
+body{
+    margin-top: 4%;
+    min-height: calc(100vh - 152px);
+}
+.card{
+    margin: 2%;
+}
+.card-header{
+    background: skyblue;
+}
+p{
+    text-align : justify;
+}
+@media only screen and (max-width:700px){
+
+    body{
+        margin-top: 0;
+    }
+}

@@ -1,0 +1,89 @@
+
+    <body>
+        <div class="container">
+            <label class="titulo">LISTA DE COMUNICADOS</label>
+            <div class="form-row" id="contenedor1">
+                <p class="subtitulo" >Buscar</p>
+                <div class="form-group">
+                    <select id="selec" onchange="BuscarTc(this.value)">
+                    <option value="" selected style="display: none">Tipo Comunicado </option>
+                    <option value="citación">Citación</option>
+                    <option value="circular">Circular</option>
+                    <option value="convocatoria">Convotoria</option>
+                    <option value="invitación">Invitación</option>
+                 </select>
+                </div>
+                <div class="form-group">
+                    <select id="selec2" onchange="BuscarEm(this.value)">
+                        <option value="" selected style="display: none">Emisor </option>
+                    <option value="dirección">Dirección</option>
+                    <option value="finanza">Finanza</option>
+                    <option value="consejero">Consejero</option>
+                    <option value="docente">Docente</option>
+                </select>
+                </div>
+                <div class="form-group">
+                    <input type="text" id="selec" placeholder="Destinatario" />   
+                </div>
+                <div class="form-group">
+                    <input type="text" id="selec" placeholder="Fecha de Evento" /> 
+                </div>
+            </div>
+        
+            <table class="table table-responsive  table-hover table-striped table-bordered" id="tblComunicado">
+                <thead>
+                    <tr>
+                        <th>Tipo de Comunicado</th>
+                        <th>Emisor</th>
+                        <th>Destinatario</th>
+                        <th>Fecha de Publicacion</th>
+                        <th>Fecha de Evento</th>
+                        <th>Estado</th>
+                        <th>Operaciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Invitación</td>
+                        <td>Finanza</td>
+                        <td>1-B, Primaria</td>
+                        <td>14/7/2017</td>
+                        <td>20/7/2017</td>
+                        <td>Publicado</td>
+                        <td>
+                            <div class="btn-group">
+                                <button type="button" class="btn btn-outline-success"  onclick="location.href ='detalles'">Detalles</button>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Citación</td>
+                        <td>Dirección</td>
+                        <td>3-A, Secundaria</td>
+                        <td>24/8/2017</td>
+                        <td>7/8/2017</td>
+                        <td>Publicado</td>
+                        <td>
+                            <div class="btn-group">
+                                <button type="button" class="btn btn-outline-success" onclick="location.href ='detalles'">Detalles</button>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Circular</td>
+                        <td>Docente</td>
+                        <td>2-A, Primaria</td>
+                        <td>2/9/2017</td>
+                        <td>10/9/2017</td>
+                        <td>Publicado</td>
+                        <td>
+                            <div class="btn-group">
+                                <button type="button" class="btn btn-outline-success" onclick="location.href ='detalles'">Detalles</button>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+      
+    </body>

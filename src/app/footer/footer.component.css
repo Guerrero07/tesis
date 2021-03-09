@@ -1,0 +1,12 @@
+.footer{
+   background:  rgb(8, 144, 235);;
+    bottom: 0;
+    height: 95px;
+    width: 100%;
+}
+.titulo{
+    padding-top: 1.5%;
+}
+.direccion{
+    padding-bottom: 1.5%;
+}

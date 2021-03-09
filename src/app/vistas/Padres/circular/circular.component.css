@@ -1,0 +1,38 @@
+body{
+    margin-top: 4%;
+}
+.card{
+    position: relative;
+    width: 96%;
+    left: 2%;
+    right: 2%;
+    margin-top: 2%;
+}
+.card-header{
+    background: rgba(57, 205, 241, 0.712);
+}
+.card-footer{
+    background: rgba(132, 143, 155, 0.602);
+}
+.media-body{
+    text-align: justify;
+}
+ .navegacion{
+     position: relative;
+     margin-top: 1%;
+     display: flex;
+     flex-wrap: wrap;
+     justify-content: center;
+}
+.pagination{
+    text-align: center;
+}
+@media only screen and (max-width:700px){
+
+    body{
+        margin-top: 0;
+    }
+    .card-body img{
+        display: none;
+    }
+}

@@ -1,0 +1,112 @@
+<html>
+<body>
+    <h4>Crear Nuevo Comunicado</h4>
+    <div class="container" id="formulario">
+        <div class="form-row" id="cont1">
+            <label>Tipo de Comunicado:</label>
+            <select class="campos" onchange="mostrartc(this.value)">
+                <option selected style="display: none">Seleccione </option>
+                <option value="citacion">Citación</option>
+                <option value="comunicado">Circular</option>
+                <option value="comunicado">Convotoria</option>
+                <option value="comunicado">Invitación</option>
+             </select>
+        </div>
+        <div class="form-row" id="cont2" style="display: none">
+            <div class="textos">
+                <label>Emitido por: </label>
+                <select class="campos" onchange="mostrar2(this.value);">
+                    <option value="otro">Dirección</option>
+                    <option value="otro">Finanza</option>
+                    <option value="otro">Consejero</option>
+                    <option value="docente">Docente</option>
+                </select>
+            </div>
+            <div class="textos" id="citacion1" style="display: none">
+                <label>Nombre:</label>
+                 <input class="campo-docente" type="text" list="doc" />
+                    <!-- <datalist id="doc">
+                        <option>Docente 1</option>
+                        <option>Docente 2</option>
+                        <option>Docente 3</option>
+                    </datalist> -->
+            </div>
+        </div>
+
+        <div class="form-row" id="comunicado2"  style="display: none;">
+            <b>A continuación Seleccione el/los destinatario(s):</b>
+                <div class="campo-nivel">
+                    <label>Nivel:</label>
+                     <select class="campos">
+                        <option selected>Todos</option>
+                        <option>Inicial</option>
+                        <option>Primaria</option>
+                        <option>Secundaria</option>
+                    </select>
+                </div>
+                <div class="campo-curso">
+                    <label>Curso:</label>
+                    <div class="multiselect">
+                        <div class="selectBox" onclick="showCheckboxes()">
+                            <select id="cursos" class="campos">
+                                <option selected style="display: none">Seleccione el curso</option>
+                            </select>
+                            <div class="overSelect"></div>
+                        </div>
+                        <div id="contenedorCursos">
+                            <div id="turnoMañana">
+                                <b> <label> <input type="checkbox" id="mañana-todos"/>Mañana </label></b>
+                               <label> <input type="checkbox" class="case"/>Primero </label>
+                                <label> <input type="checkbox" class="case"/>Segundo </label>
+                               <label> <input type="checkbox" class="case"/>Tercero </label>
+                               <label> <input type="checkbox" class="case"/>Cuarto </label>
+                               <label> <input type="checkbox" class="case"/>Quinto </label>
+                               <label> <input type="checkbox" class="case"/>Sexto </label>
+                            </div>
+                            <div id="turnoTarde">
+                                <b> <label> <input type="checkbox" id="tarde-todos"/>Tarde </label></b>
+                                <label> <input type="checkbox" class="case"/>Primero </label>
+                                 <label> <input type="checkbox" class="case"/>Segundo </label>
+                                <label> <input type="checkbox" class="case"/>Tercero </label>
+                                <label> <input type="checkbox" class="case"/>Cuarto </label>
+                                <label> <input type="checkbox" class="case"/>Quinto </label>
+                                <label> <input type="checkbox" class="case"/>Sexto </label>
+                            </div>
+                    </div>  
+                </div>
+            </div>
+        </div>
+        <div class="form-row" id="citacion2" style="display: none;">
+            <b>La citación se enviará al Tutor del...</b>
+            <div class="campo-alumno">
+                <label>Alumno:</label>
+                <select class="selec-alumno" id="alumno" onchange="agTutor(this.value)">
+                    <option value="tutor 1">Alumno 1 </option>
+                    <option value="tutor 2">Alumno 2</option>
+                    <option value="tutor 3">Alumno 3</option>
+               </select>
+            </div>
+            <div class="campo-tutor">
+                <label>Tutor:</label>
+                <input class="selec-tutor" id="tutor" type="text" disabled />
+            </div>
+        </div>
+        <div class="form-row" id="cont3" style="display:none">
+            <div class="campo-fecha">
+                <label>Fecha: </label>
+                <input class="campos" id="redondo" type="date"/>
+            </div>
+            <div class="campo-hora">
+                <label>Hora: </label>
+                <input id="redondo" type="time"/>
+            </div>
+        </div>
+        <div id="cont4" style="display:none">
+            <label>Descripción</label>
+            <textarea id="campoDescripcion"></textarea>
+        </div>
+        <div class="btn-contenedor" id="boton" style="display:none">
+            <button type="button" class="btn" onclick="location.href ='ComunicadoPendiente'" id="btnEnviar">Enviar</button>
+        </div>
+    </div>
+</body>

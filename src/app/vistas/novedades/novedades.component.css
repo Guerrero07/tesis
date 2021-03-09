@@ -1,0 +1,42 @@
+body{
+    margin-top: 60px;
+}
+.card{
+    background:skyblue;
+    width: 70%;
+    height: fit-content;
+    position: relative;
+    transform:translate(-50%);
+    left: 50%;
+    margin-top: 1%;
+}
+.card-img-top{
+    width: 100%;
+    max-height: 480px;
+}
+.card-text{
+    text-align: justify;
+}
+.navegacion{
+    position: relative;
+    margin-top: 1%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.pagination{
+   text-align: center;
+}
+
+@media only screen and (max-width:700px){
+
+    body{
+        margin-top: 0;
+    }
+    .card{
+        width: 80%;
+    }
+    .card-img-top{
+        max-height: 200px;
+    }
+}

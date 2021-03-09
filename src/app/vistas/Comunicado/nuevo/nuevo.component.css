@@ -1,0 +1,321 @@
+body{
+  margin-top: 4%;
+  min-height: calc(100vh - 152px);
+}
+h4{
+    text-align:center;
+    padding-top:10px;
+}
+.container {
+  margin-top: 10px;
+  margin-bottom: 20px;
+  padding: 0;
+  padding-bottom: 10px;
+  transition: .5s ease; 
+  border-radius: 5px;
+  min-height:calc(100vh - 220px);
+  width: 65%;
+  min-width: 600px;
+  background: rgb(39, 155, 233);
+  color: white;
+  font-size:  calc(0.5em + 1vw);
+  line-height: 1em;
+}
+.textos{
+  width: 50%;
+}
+.campos{
+  margin-left: 1%;
+  color: black;
+  min-width: 150px;
+ }
+/* seccion 1 */
+
+#cont1{
+  min-width: 100%;
+  padding: 2%;
+  align-items: center;
+  border-bottom-color: rgb(255, 255, 255);
+  border-bottom-style:solid;
+}
+
+/* seccion 2 emisor */
+
+#cont2{
+  flex-direction: row;
+  min-width: 100%;
+  padding: 2%;
+  border-bottom-color: rgb(255, 255, 255);
+  border-bottom-style:solid;
+} 
+
+.campo-docente{
+  margin-left: 1%;
+  width: 70%;
+ }
+/* seccion 3 destinatario-general */
+
+#comunicado2{
+  flex-direction: column;
+  min-width: 100%;
+  height: 90px;
+  max-height: 120px;
+  padding:6px 2%;
+  border-bottom-color: rgb(255, 255, 255);
+  border-bottom-style:solid;
+}
+.campo-nivel{
+  width: 50%;
+  margin-top: 10px;
+}
+.campo-curso{
+  display: flex;
+  width: 50%;
+  margin-top: 37px; 
+  margin-left: -80px;
+}
+
+/* seccion 3 destinatario-especifico */
+
+#citacion2{
+  flex-direction: column;
+  height: 90px;
+  min-width: 100%;
+  padding-top:6px;
+  padding-left: 2%;
+  border-bottom-color: rgb(255, 255, 255);
+  border-bottom-style:solid;
+}
+.campo-alumno{
+  padding-top: 10px;
+}
+.campo-tutor{
+  padding-top: 30px;
+  margin-left: -80px;
+}
+.selec-alumno{
+  width: 50%;
+  margin-left: 10px;
+}
+.selec-tutor{
+  width: 65%; 
+  margin-left: 10px;
+}
+
+/* seccion 4 hora y fecha */
+
+#cont3{
+  min-width: 100%;
+  padding-left: 2%;
+  border-bottom-color: rgb(255, 255, 255);
+  border-bottom-style:solid;
+}
+.campo-fecha, .campo-hora{
+  padding:15px 0;
+  width: 50%;
+}
+
+.campo-hora input{
+  margin-left: 1%;
+  color: black;
+}
+/* seccion 5 descripcion */
+
+#cont4{
+  height:100%;
+  min-width: 100%;
+  padding-top: 10px;
+  padding-left: 15px;
+}
+select{
+background-color:white;
+border-radius:10px;
+height:35px;
+width:130px;
+}
+#redondo{
+  border-radius:10px;
+  padding-left:5px;
+  min-height: 35px;
+}
+
+#campoDescripcion{
+  resize:both;
+  height:90%;
+  max-width: 98%;
+  min-width: 98%;
+  border:solid black 2px;
+  padding:0 15px;
+}
+
+.multiselect {
+ margin-top: -4px;
+  width: 340px;
+}
+.selectBox {
+  position: relative;
+}
+
+.selectBox select {
+  width: 100%;
+ 
+}
+.overSelect {
+position: absolute;
+left: 0;
+right: -4px;
+top: 0;
+bottom: 0;
+}
+
+#turnoMañana {
+background:white;
+position:absolute;
+border-right: solid 1px rgb(56, 55, 55);
+display: none;
+width:47%;
+left:3%;
+padding-left:10px;
+}
+
+#turnoMañana label {
+display: block;
+}
+#turnoMañana label input {
+  margin-right: 3px;
+  }
+
+#turnoMañana label:hover {
+background-color: #1e90ff;
+}
+
+#turnoTarde {
+background:white;
+position:absolute;
+display: none;
+width:49%;
+left: 50%;
+padding-left:10px;
+}
+
+#turnoTarde label {
+display: block;
+}
+#turnoTarde label input {
+  margin-right: 3px;
+  }
+#turnoTarde label:hover {
+background-color: #1e90ff;
+}
+#contenedorCursos{
+position: relative;;
+z-index:20;
+color: black;
+}
+.btn-contenedor{
+  width: 100%;
+}
+#btnEnviar{
+  width: 50%;
+  transform: translate(-50%);
+  margin-top: 10px;
+  margin-left: 50%;
+  background: rgb(6, 196, 21);
+  border: solid rgb(255, 255, 255) 2px;
+  border-radius: 10px;
+  color: white;
+  font-style: italic;
+}
+#btnEnviar:hover{
+  background: rgb(3, 77, 9);
+}
+
+@media only screen and (max-width:700px){
+
+  body{
+      margin-top: 0;
+  }
+
+  .container{
+    min-width: 90%;
+  }
+  .campos{
+    width: 96%;
+    border-radius:10px;
+  }
+  #cont1{
+    max-width: 96%;
+  }
+ .campo-docente{
+   width: 96%;
+ }
+  label, b{
+    margin-left: 10px;
+  }
+  .textos{
+    width: 100%;
+  }
+  #cont2{
+    flex-direction: column;
+    min-width: 100%;
+    display: inline-flex;
+  } 
+#citacion1{
+  margin-top: 10px;
+}
+  #comunicado2{
+    flex-direction: column;
+    height: 100%;
+    max-height: 100%;
+  }
+  .campo-nivel{
+    width: 98%;
+  }
+  .campo-curso{
+    flex-direction: column;
+    width: 98%;
+    margin-top: 5px; 
+    margin-left: 0px;
+    margin-bottom: 10px;
+  }
+  .multiselect {
+    width: 96%;
+  }
+  .campo-fecha{
+    width: 40%;
+  }
+  .campo-hora{
+    display: flex;
+    flex-direction: column;
+    width: 47%;
+    padding-right: 7%;
+    padding-left: 20%;
+  }
+
+  #citacion2{
+    flex-direction: column;
+    height: 100%;
+    min-width: 100%;
+    margin: 0;
+  }
+  .campo-alumno{
+    padding-top: 5px;
+  }
+  .selec-alumno{
+    width: 94%;
+    margin-left: 0;
+  }
+  .campo-tutor{
+    padding-top: 10px;
+    margin-left: 0px;
+  }
+  .selec-tutor{
+    width: 94%;
+    margin-left: 0;
+    margin-bottom: 10px;
+  }
+  
+#cont4{
+  padding-left: 7px;
+}
+}

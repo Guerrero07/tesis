@@ -1,0 +1,88 @@
+body{
+    margin-top: 56px;
+    min-height: calc(100vh - 169px);
+    background: url("../../../../assets/Imagenes/fondo.jpg")center center no-repeat;
+    background-size: cover;
+    -moz-background-size: cover;
+    -webkit-background-size: cover;
+    -o-background-size: cover;
+}
+.container{
+    padding-top: 60px;
+}
+.formulario{
+    margin: auto auto;
+    background: rgba(0,0,0,0);
+    transition: .5s ease; 
+    border-radius: 5px;
+    border:solid black;
+    width: 30%;
+    min-width: 350px;
+    min-height: 60%;
+}
+#titulo{
+    text-align: center;
+    font-family: georgia;
+    color: white;
+    margin-top: 15px;
+    margin-bottom: 20px;
+}
+#img-usuario, #img-contraseña{
+   padding-left: 15px;
+    position: relative;
+}
+input#cont {
+    background-color: rgba(0,0,0,0);;
+    color: white;
+    width:80%;
+    height: 45px;
+    font-style:oblique;
+    text-align: start;
+    padding-right: 7px;
+    border-style: none;
+    border-bottom: solid black;
+    outline: none;
+}
+::-webkit-input-placeholder{
+    color: white;
+    text-align: right;
+}
+input#cont:hover{
+    background-color:rgba(0,4,6,0.5);
+    border-right:solid deepskyblue 5px;
+}
+
+button{
+    background-color: #20E112;
+    height: 40px;
+    width: 90%;
+    border-radius: 25px;
+    border-color: black;
+    margin-left: 5%;
+    font-size: 20px;
+    font-style: italic;
+    color: white;
+}
+    button.btn:hover{
+    background-color: deepskyblue;
+    color:white;
+}
+    input.boton:focus{
+    background-color: deepskyblue;
+}
+
+.formulario:hover{
+box-shadow: 0px 0px 40px 10px rgba(255,255,255);
+}
+.alert{
+text-align: center;
+color: rgb(247, 35, 35);
+}
+
+
+@media only screen and (max-width:700px){
+
+    body{
+        margin-top: 0;
+    }
+}

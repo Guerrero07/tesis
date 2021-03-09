@@ -1,0 +1,157 @@
+body{
+    margin-top: 4%;
+    min-height: calc(100vh - 152px);
+}
+.list-group{
+    position: relative;
+    transform:translate(-50%);
+    margin-top: 5%;
+    left:89%;
+    width:180px;
+}
+#ico-notificacion{
+    display: none;
+    position: absolute;
+    right: 98%;
+    top: 38%;
+    width: 35px;
+    height: 35px;
+    }
+#btn-ntf{
+    display: none;
+}
+.ico-notificacion{
+    display: none;
+    position: relative;
+    width: 40px;
+    height: 40px;
+    top: -10px;
+    left: 92%;
+}
+.ico-notificacion img{
+    width: 40px;
+    height: 40px;
+}
+.ico-notificacion label:hover{
+    cursor: pointer;
+}
+.container{
+    position: relative;
+    left: -8%;
+    margin-top: -8%;
+    width: 83%;
+    height: 33%;
+    display: flex;
+}
+#cont-imagen{
+    position: relative;
+    width:30%;
+    height:100%;
+    left: 2%;
+}
+#cont-imagen img{
+width: 100%;
+height: 100%;
+object-fit: scale-down;
+}
+.container2{
+    position: relative;
+    width: 68%;
+    height: 100%;
+    left: 2%;
+    margin: auto;
+}
+#logo{
+    position: relative;
+    margin: auto;
+    width:25%;
+    height:25%;
+}
+#logo img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.texto{
+    padding-top: 15px;
+    font-style:oblique;
+    text-align: center;
+}
+p{
+    font-size:  calc(1em + 1vw);
+}
+.navbar2{
+  background:rgb(15, 85, 214);  
+}
+.navbar2 a{
+    color: #fff;
+    text-decoration-style: none;
+}
+.contenedor-carrusel{
+    position: relative;
+    width: 90%;
+    height: 600px;
+    margin: auto;
+}
+.carousel{
+    position: relative;
+    width: 100%;
+    height: 95%;
+}
+.carousel-inner{
+    width: 100%;
+    height: 100%;
+}
+.carousel-item{
+    width: 100%;
+    height: 100%;
+}
+.carousel-item img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+}
+
+@media only screen and (max-width:700px){
+    body{
+        margin-top: 0;
+    }
+    p{
+        font-size: 12px;
+    }
+    #ico-notificacion{
+        display: block;
+    }
+    .list-group:hover{
+        margin-right: -22%;
+    }
+      .list-group{    
+        position: fixed;
+        width: 48%;
+        top: 32px;
+        left:auto;
+        right: 0;
+        margin-left: auto;
+        margin-right: -71%;
+        transition: all 0.5s;
+        z-index: 20;
+       }
+      .ico-notificacion{
+          display: block;
+      }
+      .container{
+          width: 100%;
+          left: 0;
+          top: 15px;
+          margin: auto;
+    }
+      .contenedor-carrusel{
+          top: 15px;
+          width: 90%;
+          height: 270px;
+          margin-bottom: 20px;
+    }
+    .carousel{
+        height: 88%;
+    }
+}
