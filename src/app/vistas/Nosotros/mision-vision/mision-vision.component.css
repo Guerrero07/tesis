@@ -1,8 +1,9 @@
-
+body{
+    margin-top: 29px;
+    min-height: calc(100vh - 154px);
+}
 .container{
-    min-height: calc(100vh - 152px);
     min-width: 100%;
-    margin-top: 4%;
     padding : 40px;
     display:flex;
 }
@@ -20,22 +21,30 @@
 
 @media only screen and (max-width:700px){
 
+    body{
+        margin-top: 0;
+    }
     .container{
         flex-direction: column;
         margin-top: 0;
-        padding : 10px;
+        padding :0 20px 20px 20px;
     }
     .item{
         width: 100%;
         display:flex;
-      justify-content: center;
+        padding-right: 0;
+        justify-content: center;
     }
     .list-group{
-        width: 49%;
+        min-width: 47%;
+        background: red;
     }
     .logo{
         position: relative;
-        margin-top: 20px;
-        right: -20px;
+        margin-top: 15px;
+        right: -10px;
+    }
+    .tab-content{
+        margin: 2% 0 0 0;
     }
 }

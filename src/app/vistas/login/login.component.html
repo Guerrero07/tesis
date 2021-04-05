@@ -1,0 +1,28 @@
+<body>
+    <div class="container">
+        <form class="formulario" [formGroup]="angForm" (ngSubmit)="postdata(angForm)" >
+            <img src="../../../assets/Imagenes/user.png" id="img-logo" />
+            <p id="titulo">INICIAR SESION</p>
+            <div class="form-group">
+                <img src="../../../assets/Imagenes/email.png" id="img-usuario" />
+                <input id="cont" type="email" name="email" formControlName="email" autocomplete="off" placeholder="Email" required>
+            </div>
+            <div class="form-group">
+                <img src="../../../assets/Imagenes/padlock.png" id="img-contraseña" />
+                <input id="pass" type="password" name="Password" formControlName="password" autocomplete="off" placeholder="Password">
+                <div class="cont-check">
+                    <input id="check" type="checkbox" onclick="myFunction()">
+                    <label for="check">
+                        <img class="img-check" id="img-check"
+                          src="../../../assets/Imagenes/eye.png">
+                      </label>
+                </div>
+            </div>
+            <button type="submit" class="btn" name="ingresar">Ingresar</button>
+            <div id="ccheck">
+                <label><input type="checkbox" id="cbox1" checked="true">Recordarme</label>
+            </div>
+            <p class="alert" hidden>usuario o contraseña incoreccto</p>
+        </form>
+    </div>
+</body>

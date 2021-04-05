@@ -1,58 +1,124 @@
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"/>
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" rel="stylesheet"/>
 <body>
-    <div class="row">
-        <div class="col mb-4">
+    <div class="container">
+        <button type="button" class="btn btn-success" data-toggle="modal" data-target="#modal1" id="agregar">Agregar</button>
+    </div>
+    <div class="container-card">
+        <div class="col">
             <div class="card">
-                <img src="https://i0.pngocean.com/files/688/151/727/computer-icons-teacher-icon-design-education-applause.jpg" class="card-img-top" alt="...">
+                <img src="https://i0.pngocean.com/files/688/151/727/computer-icons-teacher-icon-design-education-applause.jpg" class="card-img" alt="...">
                 <div class="card-body">
-                    <h5 class="card-title">Nombre</h5>
-                    <p class="card-text">Materia</p>
+                    <h5 class="card-title">Carlos Daniel Flores Alvarez</h5>
+                    <p class="card-text">Informatica</p>
+                    <button *ngIf="logoutbtn" type="button" class="btn btn-warning" id="edit" data-toggle="modal" data-target="#modal1" >Editar</button>
                 </div>
             </div>
         </div>
-        <div class="col mb-4">
+        <div class="col">
             <div class="card">
-                <img src="https://i0.pngocean.com/files/688/151/727/computer-icons-teacher-icon-design-education-applause.jpg" class="card-img-top" alt="...">
+                <img src="https://i0.pngocean.com/files/688/151/727/computer-icons-teacher-icon-design-education-applause.jpg" class="card-img" alt="...">
                 <div class="card-body">
-                    <h5 class="card-title">Nombre</h5>
-                    <p class="card-text">Materia</p>
+                    <h5 class="card-title">Anahi Sidney Ramirez Poma</h5>
+                    <p class="card-text">la Serce</p>
+                    <button type="button" class="btn btn-warning" id="edit">Editar</button>
                 </div>
             </div>
         </div>
-        <div class="col mb-4">
+        <div class="col">
             <div class="card">
-                <img src="https://i0.pngocean.com/files/688/151/727/computer-icons-teacher-icon-design-education-applause.jpg" class="card-img-top" alt="...">
+                <img src="https://i0.pngocean.com/files/688/151/727/computer-icons-teacher-icon-design-education-applause.jpg" class="card-img" alt="...">
                 <div class="card-body">
                     <h5 class="card-title">Nombre</h5>
                     <p class="card-text">Materia</p>
+                    <button type="button" class="btn btn-warning" id="edit">Editar</button>
                 </div>
             </div>
         </div>
-        <div class="col mb-4">
+        <div class="col">
             <div class="card">
-                <img src="https://i0.pngocean.com/files/688/151/727/computer-icons-teacher-icon-design-education-applause.jpg" class="card-img-top" alt="...">
+                <img src="https://i0.pngocean.com/files/688/151/727/computer-icons-teacher-icon-design-education-applause.jpg" class="card-img" alt="...">
                 <div class="card-body">
                     <h5 class="card-title">Nombre</h5>
                     <p class="card-text">Materia</p>
+                    <button type="button" class="btn btn-warning" id="edit">Editar</button>
                 </div>
             </div>
         </div>
-        <div class="col mb-4">
+        <div class="col">
             <div class="card">
-                <img src="https://i0.pngocean.com/files/688/151/727/computer-icons-teacher-icon-design-education-applause.jpg" class="card-img-top" alt="...">
+                <img src="https://i0.pngocean.com/files/688/151/727/computer-icons-teacher-icon-design-education-applause.jpg" class="card-img" alt="...">
                 <div class="card-body">
                     <h5 class="card-title">Nombre</h5>
                     <p class="card-text">Materia</p>
-                </div>
-            </div>
-        </div>
-        <div class="col mb-4">
-            <div class="card">
-                <img src="https://i0.pngocean.com/files/688/151/727/computer-icons-teacher-icon-design-education-applause.jpg" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Nombre</h5>
-                    <p class="card-text">Materia</p>
+                    <button type="button" class="btn btn-warning" id="edit">Editar</button>
                 </div>
             </div>
         </div>  
-    </div>   
+    </div>  
+
+
+    <div class="modal fade" id="modal1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Datos del Docente</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="close">
+                        &times;
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>
+                        Sube una imagen:
+                        <input type="file" name="archivo" style="width: 100%;" >
+                      </p>
+                    
+                      <div class="form-group has-feedback">
+                        <i class="fa fa-address-card form-control-feedback"></i>
+                        <input type="text" class="form-control" placeholder="Nombre">
+                      </div>
+                      
+                      <div class="form-group has-feedback">
+                        <i class="fa fa-address-card form-control-feedback"></i>
+                        <input type="text" class="form-control" placeholder="Apellido Paterno">
+                      </div>
+                     
+                      <div class="form-group has-feedback">
+                        <i class="fa fa-address-card form-control-feedback"></i>
+                        <input type="text" class="form-control" placeholder="Apellido Materno">
+                      </div>
+                     
+                      <div class="form-group has-feedback">
+                        <i class="fa fa-envelope form-control-feedback"></i>
+                        <input type="text" class="form-control" placeholder="Correo Electronico">
+                      </div>
+                    
+                      <div class="form-group has-feedback">
+                        <i class="fa fa-book form-control-feedback"></i>
+                        <select name="materia" id="" class="form-control">
+                            <option value="" hidden>Materia</option>
+                            <option value="1">materia 1</option>
+                            <option value="2">materia 2</option>
+                            <option value="3">materia 3</option>
+                        </select>
+                      </div>
+                     
+                      <div class="form-group has-feedback">
+                        <i class="fa fa-briefcase form-control-feedback"></i>
+                        <select name="materia" id="" class="form-control">
+                            <option value="" hidden>Estado</option>
+                            <option value="1">Activo</option>
+                            <option value="2">Inactivo</option>
+                        </select>
+                      </div>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-success" data-dismiss="modal" disabled>
+                    Crear usuario</button>
+                    <button type="button" class="btn btn-primary">Guardar</button>
+                </div>
+            </div>
+        </div>
+    </div> 
 </body>

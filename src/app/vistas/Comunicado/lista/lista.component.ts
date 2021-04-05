@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit} from '@angular/core';
+// import { DetalleComponent } from '../detalle/detalle.component';
 
 @Component({
   selector: 'app-lista',
@@ -7,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListaComponent implements OnInit {
 
-  constructor() { }
+  // @ViewChild(DetalleComponent) hijo: DetalleComponent
 
   ngOnInit(): void {
   }

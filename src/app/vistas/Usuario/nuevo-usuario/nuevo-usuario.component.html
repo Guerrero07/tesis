@@ -1,16 +1,32 @@
 <body>
   <div class="container">
-    <form action="" method="POST" class="formulario">
-      <h3 id="titulo">INICIAR SESION</h3>
+    <form class="formulario" [formGroup]="angForm" (ngSubmit)="postdata(angForm)">
+      <h3 id="titulo">NUEVO USUARIO</h3>
+      <div class="form-group">
+        <img src="../../../../assets/Imagenes/usuario.png" id="img-usuario"/>
+        <input type="email" id="cont" name="name" formControlName="name" placeholder="Nombre">
+      </div>
         <div class="form-group">
-          <img src="../../../../assets/Imagenes/correo.png" width="50px" height="35px" id="img-usuario"/>
-          <input type="email" name="usuario" id="cont" placeholder="Usuario">
+          <img src="../../../../assets/Imagenes/correo.png" id="img-email"/>
+          <input type="email" id="cont" name="email" formControlName="email"placeholder="Email">
         </div>
         <div class="form-group">
-          <img src="../../../../assets/Imagenes/llave.png" width="50px" height="35px" id="img-contraseña"/>   
-            <input type="password" name="clave" id="cont" placeholder="Contraseña">
+          <img src="../../../../assets/Imagenes/llave.png" id="img-contraseña"/>   
+            <input type="password" id="cont" name="Password" formControlName="password"  placeholder="Contraseña">
         </div>
-        <button type="submit" class="btn" name="ingresar">Ingresar</button>
+        <div class="form-group">
+          <img src="../../../../assets/Imagenes/entrar.png" id="img-tipo"/>
+          <select id="tipo" name="rol" formControlName="rol">
+            <option value="" hidden>
+              Seleccione
+            </option>
+            <option value="1">Adminstrador</option>
+            <option value="2">Secretaria</option>
+            <option value="3">Docente</option>
+            <option value="4">Tutor</option>
+          </select>
+        </div>
+        <button type="submit" class="btn" name="ingresar">Guardar</button>
         <p class="alert"></p>
     </form>
   </div>

@@ -1,7 +1,7 @@
 .container{
     margin:auto;
-    margin-top: 4%;
-    min-height: calc(100vh - 152px);
+    margin-top: 29px;
+    min-height: calc(100vh - 154px);
 }
 .titulo{
     width: 100%;
@@ -20,8 +20,6 @@ thead {
 
 .btn-group{
     margin-left: 5px;
-    /* margin-top: 2px;
-    margin-bottom: 2px; */
 }
 
 @media only screen and (max-width:700px){
@@ -29,8 +27,11 @@ thead {
         font-size:  calc(0.5em + 1vw);
         line-height: 1em;
     }
+    .titulo{
+        padding-top: 0;
+    }
     .container{
-        margin-top: 0px;
+        margin-top: 0;
     }
 
     .table{

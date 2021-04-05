@@ -1,18 +1,65 @@
 body{
-    margin-top: 4%;
-    min-height: calc(100vh - 152px);
+    margin-top: 29px;
+    min-height: calc(100vh - 154px);
+    display: flex;
+}
+.img-responsive{
+    height: 90%;
+    width: 100%;
+    margin-bottom: 0;
+    margin-top: auto;
 }
 .container{
-    padding: 20px;
+    padding: 0;
+    width: 50%;
 }
 .titulo{
-    text-align: center;
+    margin-top: 15px;
+  text-align: center;
+  font-style: italic;
 }
+.formulario{
+    max-width: 100%;
+    margin-left: 0%;
+    margin-right: auto;
+    padding:7px 7px;
+    border-radius: 5px;
+    background-color: rgba(36, 177, 241, 0.897);
+    box-shadow: 5px 5px 5px #999;
+}
+input, select, textarea{
+    border: solid 1px;
+}
+#Reservar{
+    width: 50%;
+    transform: translate(-50%);
+    margin-top: 10px;
+    margin-left: 50%;
+    background: rgb(6, 196, 21);
+    border: solid rgb(255, 255, 255) 2px;
+    border-radius: 10px;
+    color: white;
+    font-style: italic;
+  }
+  #Reservar:hover{
+    background: rgb(3, 77, 9);
+  }
+  
 @media all and (max-width:700px){
     body{
         margin-top: 0;
     }
+    *{
+        font-size:  calc(0.5em + 1vw);
+        line-height: 1em;
+    }
+    .container{
+        width: 90%;
+    }
+    .titulo{
+        margin-top: 0;
+    }
     #Reservar{
-        width: 100%;
+        margin-bottom: 0px;
     }
 }

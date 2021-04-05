@@ -1,14 +1,15 @@
 
 <div class="container">
-    <label class="titulo">LISTA DE COMUNICADOS PENDIENTES</label>
+    <h4 class="titulo">LISTA DE COMUNICADOS PENDIENTES</h4>
 
     <table class="table table-responsive  table-hover table-striped table-bordered">
         <thead>
             <tr>
                 <th>Fecha</th>
-                <th>Emisor</th>
+                <th>Origen</th>
                 <th>Destinatario</th>
                 <th>Tipo de comunicado</th>
+                <th>Redaccion</th>
                 <th>Operaciones</th>
             </tr>
         </thead>
@@ -18,9 +19,10 @@
                 <td>Finanza</td>
                 <td>1-B, Mañana</td>
                 <td>Invitacion</td>
+                <td>Nombre1</td>
                 <td class="botones">
                     <div class="btn-group">
-                        <button type="button" class="btn btn-outline-success" onclick="location.href ='detalles'">Detalles</button>
+                        <button type="button" class="btn btn-outline-success" onclick="location.href ='detallePendiente'">Detalles</button>
                     </div>
                     <div class="btn-group">
                         <button type="button" class="btn btn-outline-danger" onchange="Eliminar(this.value)">Eliminar</button>
@@ -32,9 +34,10 @@
                 <td>Direccion</td>
                 <td>2-A tarde</td>
                 <td>Circular</td>
+                <td>Nombre2</td>
                 <td>
                     <div class="btn-group">
-                        <button type="button" class="btn btn-outline-success" onclick="location.href ='detalles'">Detalles</button>
+                        <button type="button" class="btn btn-outline-success" onclick="location.href ='detallePendiente'">Detalles</button>
                     </div>
                     <div class="btn-group">
                         <button type="button" class="btn btn-outline-danger" onclick="">Eliminar</button>
@@ -46,9 +49,10 @@
                 <td>Docente</td>
                 <td>3-A tarde</td>
                 <td>Circular</td>
+                <td>Nombre3</td>
                 <td>
                     <div class="btn-group">
-                        <button type="button" class="btn btn-outline-success" onclick="location.href ='detalles'">Detalles</button>
+                        <button type="button" class="btn btn-outline-success" onclick="location.href ='detallePendiente'">Detalles</button>
                     </div>
                     <div class="btn-group">
                         <button type="button" class="btn btn-outline-danger"  onclick="">Eliminar</button>

@@ -16,7 +16,7 @@
     </label>
     <nav class="menu-responsive">
       <ul>
-        <li><a  href="inicio">Inicio</a></li>
+        <li><a href="inicio">Inicio</a></li>
         <li><a href="novedades">Novedades</a></li>
         <li id="nosotros"><a>Nosotros <font size="1">&#9660;</font> </a>
           <ul id="sub-menu1">
@@ -32,20 +32,23 @@
             <li><a href="entrevista">Entrevistas</a></li>
           </ul>
         </li>
-        <li id="comunicado"><a>Comunicados <font size="1">&#9660;</font></a>
+        <li id="comunicado" ><a>Comunicados <font size="1">&#9660;</font></a>
           <ul id="sub-menu3">
             <li><a href="comunicado">Crear Comunicado</a></li>
             <li><a href="lista">Lista Comunicado</a></li>
             <li><a href="pendientes">Pendientes</a></li>
           </ul>
         </li>
-        <li id="usuario"><a>Usuarios <font size="1">&#9660;</font></a>
+        <li id="usuario"  ><a>Usuarios <font size="1">&#9660;</font></a>
           <ul id="sub-menu4">
             <li><a href="NuevoUsuario">Crear Usuario</a></li>
-            <li><a href="#">Adminstrar</a></li>
+            <li><a href="adminUsuario">Adminstrar</a></li>
           </ul>
        </li>
-       <li id="login"><a href="NuevoUsuario">Iniciar Sesion</a>
+       
+          <li id="login" *ngIf="loginbtn"><a href="login">Iniciar Sesion</a>
+          <li id="logout" *ngIf="logoutbtn" (click)="logout()"><a >Cerrar Sesion</a>
+
     </ul>
   </nav>
 </header>

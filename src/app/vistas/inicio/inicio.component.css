@@ -1,13 +1,13 @@
 body{
-    margin-top: 4%;
-    min-height: calc(100vh - 152px);
+    margin-top: 29px;
+    min-height: calc(100vh - 154px);
 }
 .list-group{
     position: relative;
     transform:translate(-50%);
     margin-top: 5%;
     left:89%;
-    width:180px;
+    width:160px;
 }
 #ico-notificacion{
     display: none;
@@ -90,8 +90,9 @@ p{
 .contenedor-carrusel{
     position: relative;
     width: 90%;
-    height: 600px;
+    height: 540px;
     margin: auto;
+    margin-bottom: 20px;
 }
 .carousel{
     position: relative;
@@ -123,16 +124,16 @@ p{
         display: block;
     }
     .list-group:hover{
-        margin-right: -22%;
+        margin-right: -70px;
     }
       .list-group{    
         position: fixed;
-        width: 48%;
+        width: 150px;
         top: 32px;
         left:auto;
         right: 0;
         margin-left: auto;
-        margin-right: -71%;
+        margin-right: -220px;
         transition: all 0.5s;
         z-index: 20;
        }

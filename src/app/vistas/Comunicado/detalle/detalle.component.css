@@ -1,7 +1,6 @@
 body{
-    margin: 0;
-    margin-top: 4%;
-    min-height: calc(100vh - 152px);
+    margin-top: 29px;
+    min-height: calc(100vh - 154px);
 }
 b{
  font-size:  calc(0.5em + 1vw);
@@ -9,24 +8,15 @@ b{
 }
 
 .titulo{
-    margin-top: 70px;
+    padding-top: 15px;
     text-align: center;
+    font-style:italic;
 }
-#estado{
-    margin-top: auto;
-    margin-right: auto;
-    margin-left: 0;
-    background:rgb(39, 155, 233);
-}
-#estado input{
-    padding-right: 5px;
-    max-width: 130px;
-    color: rgb(255, 255, 255);
-}
+
  .container{
      margin: auto;
      margin-bottom: 1em;
-     padding: 0%;
+     padding: 0;
      width:50%;
      height: 100%;
      background:rgb(39, 155, 233);
@@ -47,37 +37,22 @@ b{
     min-width: 98%;
     min-height: 80px;
     border:solid rgb(255, 255, 255) 1px;
-    padding-left: 15px;
+    padding-left: 10px;
     margin-top: 10px;
     margin-bottom: 10px;
-    font-size:  calc(0.5em + 1vw);
     line-height: 1em;
    }
    textarea::placeholder{
     color: black;
    }
-   #cont1{
-    width:100%;
-    margin: 0%;
-    padding-top: 1em;
-    padding-left: 10px;
-}
-   #cont2{
-     width:100%;
-     margin: 0%;
-     padding-top: 1em;
-     padding-left: 10px;
-     border-top:solid rgb(255, 255, 255);
-     border-bottom:solid rgb(255, 255, 255);
-   }
-    #cont3{
+    #cont1, #cont2, #cont3, #cont4{
         width:100%;
         margin: 0%;
         padding-top: 1em;
         padding-left: 10px;
         border-bottom:solid rgb(255, 255, 255);
    }
-    #cont4{
+    #cont5{
         width:100%;
         margin: 0%;
         padding-top: 1em;
@@ -107,8 +82,12 @@ b{
     body{
         margin-top: 0;
     }
+    *{
+        font-size:  calc(0.5em + 1vw);
+        line-height: 1em;
+    }
     .titulo{
-        margin-top: 0;
+        padding-top: 0;
     }
     .container{
         width:80%;
@@ -119,5 +98,8 @@ b{
       .btn-contenedor{
         max-width: 80%;
         margin: auto;
+    }
+    textarea{
+        padding-left: 5px;
     }
 }  

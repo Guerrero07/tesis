@@ -1,5 +1,6 @@
 body{
     margin: 0;
+    padding-bottom: 2%;
 }
 
 #btn-menu{
@@ -40,7 +41,8 @@ header img{
     position: fixed;
     background: rgb(8, 144, 235);
     width: 100%;
-    height: 56px;
+    min-height: 56px;
+    max-height: 70px;
     z-index: 100;
     top: 0;
 }
@@ -53,12 +55,12 @@ header img{
 }
 .menu-responsive li a{
     display: block;
-    padding: 14px 20px;
+    padding: 14px 15px;
     color: rgb(255,255,255);
     text-decoration: none;
     margin-top: 3px;
     cursor: pointer;
-    /* texto no seleccionable */
+    /*hacer texto no seleccionable */
     transition-property: background-color, border-radius;
     transition-duration: 1s;
     -moz-user-select: none; 
@@ -83,8 +85,10 @@ header img{
         margin: 0;
         background:  #161D6F;
         z-index: 30;
+        width: 200px;
     }
-    #login{
+    #login, #logout{
+        
         margin-right: 0;
         margin-left: auto;
     }
@@ -114,10 +118,11 @@ header img{
     }
     .menu-responsive{
         position: absolute;
-        width: 70%;
+        width: 75%;
         height: calc(100vh - 48px);
+        max-height: 100%;
         top: 48px;
-        margin-left: -70%;
+        margin-left: -75%;
         transition: all 0.5s;
         z-index: 50;
     }
@@ -132,6 +137,9 @@ header img{
         opacity: 1;
         visibility: visible;
         height: auto;
+    }
+    .menu-responsive ul ul li{
+        width: 100%;
     }
     #login{
         width: 100%;
@@ -158,4 +166,8 @@ header img{
       #usuario:hover #sub-menu4{
          display: block;
       }
+      #login, #logout{
+        margin-right: 0;
+        margin-left: 0;
+    }
 }

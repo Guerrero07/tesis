@@ -18,6 +18,13 @@ import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { HistoryComponent } from './vistas/Nosotros/history/history.component';
 import { NuevoUsuarioComponent } from './vistas/Usuario/nuevo-usuario/nuevo-usuario.component';
+import { LoginComponent } from './vistas/login/login.component';
+import { DetallePendienteComponent } from './vistas/Comunicado/detalle-pendiente/detalle-pendiente.component';
+import { AdministrarUsuarioComponent } from './vistas/Usuario/administrar-usuario/administrar-usuario.component';
+
+
+import {FormsModule,ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -36,11 +43,18 @@ import { NuevoUsuarioComponent } from './vistas/Usuario/nuevo-usuario/nuevo-usua
     HeaderComponent,
     FooterComponent,
     HistoryComponent,
-    NuevoUsuarioComponent
+    NuevoUsuarioComponent,
+    LoginComponent,
+    DetallePendienteComponent,
+    AdministrarUsuarioComponent
   ],
   imports: [
     BrowserModule,
-    routing
+    routing,
+    FormsModule,
+    HttpClientModule,
+    ReactiveFormsModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,3 +1,16 @@
+// ---funcion mostrar contrseña---//
+
+function myFunction() {
+    var x = document.getElementById("pass");
+    if (x.type === "password") {
+      x.type = "text";
+      $('#img-check').replaceWith('<img class="img-check" id="img-check" src="../../../assets/Imagenes/hide.png">');
+    } else {
+      x.type = "password";
+      $('#img-check').replaceWith('<img class="img-check" id="img-check" src="../../../assets/Imagenes/eye.png">');
+    }
+  }
+
 //----finciones de crear comunicado----//
 
     function mostrartc(id) {

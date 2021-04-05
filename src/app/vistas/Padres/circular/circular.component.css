@@ -1,18 +1,14 @@
 body{
-    margin-top: 4%;
+    margin-top: 29px;
+    padding-top: 20px;
+    min-height: calc(100vh - 154px);
 }
 .card{
-    position: relative;
-    width: 96%;
-    left: 2%;
-    right: 2%;
-    margin-top: 2%;
+    width: 90%;
+    margin: 0 auto 2% auto;
 }
 .card-header{
     background: rgba(57, 205, 241, 0.712);
-}
-.card-footer{
-    background: rgba(132, 143, 155, 0.602);
 }
 .media-body{
     text-align: justify;
@@ -31,8 +27,12 @@ body{
 
     body{
         margin-top: 0;
+        padding-top: 0;
     }
     .card-body img{
         display: none;
+    }
+    .card{
+        width: 96%;
     }
 }

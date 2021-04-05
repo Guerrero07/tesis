@@ -12,22 +12,34 @@ import { NovedadesComponent } from './vistas/novedades/novedades.component';
 import { DocenteComponent } from './vistas/Nosotros/docente/docente.component';
 import {HistoryComponent} from './vistas/Nosotros/history/history.component';
 import { NuevoUsuarioComponent } from './vistas/Usuario/nuevo-usuario/nuevo-usuario.component';
+import { AdministrarUsuarioComponent } from './vistas/Usuario/administrar-usuario/administrar-usuario.component';
+import { LoginComponent } from './vistas/login/login.component';
+import { DetallePendienteComponent } from './vistas/Comunicado/detalle-pendiente/detalle-pendiente.component';
+
+import {AuthGuard } from './Guard/auth.guard'
 
 const appRoutes = [
   { path: '', component: InicioComponent},
   { path: 'inicio', component: InicioComponent},
-  { path: 'comunicado', component: NuevoComponent},
-  { path: 'lista', component: ListaComponent},
-  { path: 'circulares', component: CircularComponent},
-  { path: 'citaciones', component: CitacionComponent},
-  { path: 'detalles', component: DetalleComponent},
-  { path: 'entrevista', component: EntrevistaComponent},
-  { path: 'mision', component: MisionVisionComponent},
   { path: 'novedades', component: NovedadesComponent},
-  { path: 'pendientes', component: PendienteComponent},
+  { path: 'mision', component: MisionVisionComponent},
   { path: 'docentes', component: DocenteComponent},
   { path: 'historia', component: HistoryComponent},
+  { path: 'circulares', component: CircularComponent},
+  { path: 'citaciones', component: CitacionComponent},
+  { path: 'entrevista', component: EntrevistaComponent},
+
+  // ,canActivate: [AuthGuard]
+  { path: 'comunicado', component: NuevoComponent},
+  { path: 'lista', component: ListaComponent},
+  { path: 'detalles', component: DetalleComponent},
+  { path: 'detallePendiente', component: DetallePendienteComponent},
+  { path: 'pendientes', component: PendienteComponent},
   { path: 'NuevoUsuario', component: NuevoUsuarioComponent},
+  { path: 'adminUsuario', component: AdministrarUsuarioComponent},
+  
+  { path: 'login', component: LoginComponent},
+
   
 ];
 export const routing = RouterModule.forRoot(appRoutes);
