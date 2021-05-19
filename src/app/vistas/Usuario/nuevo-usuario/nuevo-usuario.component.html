@@ -1,18 +1,21 @@
 <body>
   <div class="container">
-    <form class="formulario" [formGroup]="angForm" (ngSubmit)="postdata(angForm)">
+    <form class="formulario" [formGroup]="userForm" (ngSubmit)="createUser(userForm)">
       <h3 id="titulo">NUEVO USUARIO</h3>
+      <div class="form-group"> 
+        <input type="text" id="cont" name="id" formControlName="id">
+      </div>
       <div class="form-group">
         <img src="../../../../assets/Imagenes/usuario.png" id="img-usuario"/>
-        <input type="email" id="cont" name="name" formControlName="name" placeholder="Nombre">
+        <input type="text" id="cont" name="username" formControlName="username">
       </div>
         <div class="form-group">
           <img src="../../../../assets/Imagenes/correo.png" id="img-email"/>
-          <input type="email" id="cont" name="email" formControlName="email"placeholder="Email">
+          <input type="email" id="cont" name="email" formControlName="email" placeholder="Email">
         </div>
         <div class="form-group">
           <img src="../../../../assets/Imagenes/llave.png" id="img-contraseña"/>   
-            <input type="password" id="cont" name="Password" formControlName="password"  placeholder="Contraseña">
+            <input type="password" id="cont" name="password" formControlName="password" placeholder="Contraseña">
         </div>
         <div class="form-group">
           <img src="../../../../assets/Imagenes/entrar.png" id="img-tipo"/>
@@ -21,13 +24,49 @@
               Seleccione
             </option>
             <option value="1">Adminstrador</option>
-            <option value="2">Secretaria</option>
-            <option value="3">Docente</option>
+            <option value="2">Docente</option>
+            <option value="3">Secretaria</option>
             <option value="4">Tutor</option>
           </select>
         </div>
-        <button type="submit" class="btn" name="ingresar">Guardar</button>
+        <div class="entrevista">
+          <label>¿Recibira entrevista?</label>
+          <div class="checkbox-JASoft">
+            <input type="checkbox" id="checkAvanzado" name="checkvista" formControlName="entrevista" onchange="javascript:showContent()"/>
+            <label for="checkAvanzado"></label>
+          </div>
+        </div>
+  
+        <div id="contenedor-boton" style="display: none;">
+          <button type="button" data-toggle="modal" data-target="#modal1" class="btn btn-success"
+            id="agregar">Agregar</button>
+        </div>
+  
+        <button type="submit" class="btn btn-guardar" name="ingresar">Guardar</button>
         <p class="alert"></p>
-    </form>
-  </div>
-</body>
+      </form>
+    </div>
+  
+  
+  
+    <div class="modal fade" id="modal1">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Dias de Entrevista</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="close">
+              &times;
+            </button>
+          </div>
+          <div class="modal-body">
+            <p>
+              aqui van a ir los inputs para guardar los dias de entrevista:
+              <input type="number" id="cont" name="identrevista" formControlName="identrevista">
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-primary">Guardar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>

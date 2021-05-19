@@ -1,7 +1,7 @@
 <?php
 include_once("database.php");
 
-    $sql = "SELECT * FROM usuario";
+    $sql = "SELECT * FROM persona";
     $result = mysqli_query($mysqli,$sql);
     $lista=array();
 
@@ -10,5 +10,4 @@ include_once("database.php");
             $lista[]=$res;
         }
         echo json_encode($lista);
-        
 ?>

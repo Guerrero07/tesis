@@ -1,6 +1,6 @@
 <body>
     <div class="container">
-        <form class="formulario" [formGroup]="angForm" (ngSubmit)="postdata(angForm)" >
+        <form class="formulario" [formGroup]="userForm" (ngSubmit)="login(userForm)" >
             <img src="../../../assets/Imagenes/user.png" id="img-logo" />
             <p id="titulo">INICIAR SESION</p>
             <div class="form-group">
@@ -9,7 +9,7 @@
             </div>
             <div class="form-group">
                 <img src="../../../assets/Imagenes/padlock.png" id="img-contraseña" />
-                <input id="pass" type="password" name="Password" formControlName="password" autocomplete="off" placeholder="Password">
+                <input id="pass" type="password" name="password" formControlName="password" autocomplete="off" placeholder="Password" required>
                 <div class="cont-check">
                     <input id="check" type="checkbox" onclick="myFunction()">
                     <label for="check">

@@ -5,20 +5,21 @@ include_once("database.php");
 
         if(isset($postdata) && !empty($postdata))
         {
+            $email = mysqli_real_escape_string($mysqli, trim($request->email));
             $pwd = mysqli_real_escape_string($mysqli, trim($request->password));
-            $email = mysqli_real_escape_string($mysqli, trim        ($request->username));
 
-            $sql = "SELECT * FROM users where email='$email' and        password='$pwd'";
-    
+            $sql = "SELECT id_person, username, email, tipo_usuario, entrevista, id_entrevista FROM usuario where email='$email' and PASSWORD='$pwd'  and estado=1";
+
             if($result = mysqli_query($mysqli,$sql))
             {
                 $rows = array();
-                
+             
                 while($row = mysqli_fetch_assoc($result))
                 {
                     $rows[] = $row;
                 }
             echo json_encode($rows);
+         
             }
             else
             {

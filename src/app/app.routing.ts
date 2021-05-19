@@ -17,29 +17,130 @@ import { LoginComponent } from './vistas/login/login.component';
 import { DetallePendienteComponent } from './vistas/Comunicado/detalle-pendiente/detalle-pendiente.component';
 
 import {AuthGuard } from './Guard/auth.guard'
+import {RoleGuard } from './Guard/RoleGuard/role.guard'
+import {GUARDS} from './Model/guard'
+import { PersonaComponent } from './vistas/Registro/persona/persona.component';
+import { AdministrarPersonaComponent } from './vistas/Registro/administrar-persona/administrar-persona.component';
+import { from } from 'rxjs';
 
 const appRoutes = [
   { path: '', component: InicioComponent},
-  { path: 'inicio', component: InicioComponent},
-  { path: 'novedades', component: NovedadesComponent},
-  { path: 'mision', component: MisionVisionComponent},
-  { path: 'docentes', component: DocenteComponent},
-  { path: 'historia', component: HistoryComponent},
-  { path: 'circulares', component: CircularComponent},
-  { path: 'citaciones', component: CitacionComponent},
-  { path: 'entrevista', component: EntrevistaComponent},
+  { path: 'inicio', component: InicioComponent, canActivate: [AuthGuard]},
 
-  // ,canActivate: [AuthGuard]
-  { path: 'comunicado', component: NuevoComponent},
-  { path: 'lista', component: ListaComponent},
-  { path: 'detalles', component: DetalleComponent},
-  { path: 'detallePendiente', component: DetallePendienteComponent},
-  { path: 'pendientes', component: PendienteComponent},
-  { path: 'NuevoUsuario', component: NuevoUsuarioComponent},
-  { path: 'adminUsuario', component: AdministrarUsuarioComponent},
-  
-  { path: 'login', component: LoginComponent},
+  { path: 'novedades', component: NovedadesComponent,
+  data: {
+    guards: [
+      GUARDS.TUTOR
+  ]
+  },
+    canActivate: [AuthGuard, RoleGuard]
+  },
 
+  { path: 'mision', component: MisionVisionComponent, canActivate: [AuthGuard]},
+  { path: 'docentes', component: DocenteComponent, canActivate: [AuthGuard]},
+  { path: 'historia', component: HistoryComponent, canActivate: [AuthGuard]},
+
+  { path: 'circulares', component: CircularComponent,
+  data: {
+    guards: [
+      GUARDS.TUTOR
+  ]
+  },
+    canActivate: [AuthGuard, RoleGuard]
+  },
+  { path: 'citaciones', component: CitacionComponent,
+  data: {
+    guards: [
+      GUARDS.TUTOR
+  ]
+  },
+    canActivate: [AuthGuard, RoleGuard]}
+    ,
+  { path: 'entrevista', component: EntrevistaComponent,
+  data: {
+    guards: [
+      GUARDS.TUTOR
+  ]
+  },
+    canActivate: [AuthGuard, RoleGuard]
+  },
+
+  { path: 'comunicado', component: NuevoComponent,
+  data: {
+    guards: [
+      GUARDS.ADMIN,
+      GUARDS.SECRETARIA
+  ]
+  },
+    canActivate: [AuthGuard, RoleGuard]
+},
+  { path: 'lista', component: ListaComponent,
+  data: {
+    guards: [
+      GUARDS.ADMIN
+  ]
+  },
+    canActivate: [AuthGuard, RoleGuard]
+},
+  { path: 'detalles', component: DetalleComponent,
+  data: {
+    guards: [
+      GUARDS.ADMIN
+  ]
+  },
+    canActivate: [AuthGuard, RoleGuard]
+  },
+  { path: 'detallePendiente', component: DetallePendienteComponent,
+  data: {
+    guards: [
+      GUARDS.ADMIN
+  ]
+  },
+    canActivate: [AuthGuard, RoleGuard]
+  },
+  { path: 'pendientes', component: PendienteComponent,
+  data: {
+    guards: [
+      GUARDS.ADMIN,
+      GUARDS.SECRETARIA
+  ]
+  },
+    canActivate: [AuthGuard, RoleGuard]
+  },
+  { path: 'NuevoUsuario', component: NuevoUsuarioComponent,
+  data: {
+    guards: [
+      GUARDS.ADMIN
+  ]
+  },
+    canActivate: [AuthGuard, RoleGuard]
+  },
+  { path: 'adminUsuario', component: AdministrarUsuarioComponent,
+  data: {
+    guards: [
+      GUARDS.ADMIN
+  ]
+  },
+    canActivate: [AuthGuard, RoleGuard]
+  },
+  { path: 'NuevoRegistro', component: PersonaComponent,
+  data: {
+    guards: [
+      GUARDS.ADMIN
+  ]
+  },
+    canActivate: [AuthGuard, RoleGuard]
+  },
+  { path: 'adminPersona', component: AdministrarPersonaComponent,
+  data: {
+    guards: [
+      GUARDS.ADMIN
+  ]
+  },
+    canActivate: [AuthGuard, RoleGuard]
+  },
   
+  { path: 'login', component: LoginComponent}
 ];
+
 export const routing = RouterModule.forRoot(appRoutes);

@@ -1,0 +1,31 @@
+<body>
+    <table class="table table-responsive table-hover table-striped table-bordered">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Nombres</th>
+          <th scope="col">Ap Paterno</th>
+          <th scope="col">Ap Materno</th>
+          <th scope="col">telefono</th>
+          <th>Operaciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let person of personas">
+          <th scope="row">{{person.id}}</th>
+          <td>{{person.nombre}}</td>
+          <td>{{person.ap_paterno}}</td>
+          <td>{{person.ap_materno}}</td>
+          <td>{{person.telefono}}</td>  
+          <td class="botones">
+            <div class="btn-group">
+                <button type="button" class="btn btn-outline-success" (click)="detalle(person)">Crear Usuario</button>
+            </div>
+            <div class="btn-group">
+                <button type="button" class="btn btn-outline-danger">Eliminar</button>
+            </div>
+        </td>
+        </tr>
+      </tbody>
+    </table>
+  </body>

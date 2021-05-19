@@ -1,0 +1,26 @@
+<body>
+    <div class="container">
+      <form class="formulario"  [formGroup]="personaForm" (ngSubmit)="postdata(personaForm)">
+        <h3 id="titulo">NUEVO REGISTRO</h3>
+        <div class="form-group">
+          <img src="../../../../assets/Imagenes/usuario.png" id="img-usuario"/>
+          <input type="text" id="cont" name="name" formControlName="nombre" placeholder="Nombre(s)">
+        </div>
+          <div class="form-group">
+            <img src="../../../../assets/Imagenes/usuario.png" id="img-email"/>
+            <input type="text" id="cont" name="paterno" formControlName="paterno"placeholder="Apellido Paterno">
+          </div>
+          <div class="form-group">
+            <img src="../../../../assets/Imagenes/usuario.png" id="img-contraseña"/>   
+              <input type="text" id="cont" name="materno" formControlName="materno"  placeholder="Apellido Materno">
+          </div>
+          <div class="form-group">
+            <img src="../../../../assets/Imagenes/usuario.png" id="img-tipo"/>
+            <input type="text" id="cont" name="materno" formControlName="telefono"  placeholder="Telefono">
+
+          </div>
+          <button type="submit" class="btn" name="ingresar">Guardar</button>
+          <p class="alert"></p>
+      </form>
+    </div>
+  </body>

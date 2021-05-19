@@ -192,3 +192,16 @@ $(document).ready(function () {
                 $('#horario2').hide();
             }
         }
+
+// ocultar y mostrar boton de crear entrevista
+
+function showContent() {
+    element = document.getElementById("contenedor-boton");
+    check = document.getElementById("checkAvanzado");
+    if (check.checked) {
+        element.style.display='block';
+    }
+    else {
+        element.style.display='none';
+    }
+}

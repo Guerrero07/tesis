@@ -10,10 +10,10 @@ import { ServiceService } from '../../Service/service.service';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-  angForm: FormGroup;
+  userForm: FormGroup;
 
   constructor(private fb: FormBuilder, private dataService: ServiceService, private router: Router) {
-      this.angForm = this.fb.group({
+      this.userForm = this.fb.group({
           email: ['', [Validators.required, Validators.email]],
           password: ['', Validators.required]
       });
@@ -21,19 +21,23 @@ export class LoginComponent implements OnInit {
 
   ngOnInit() {
   }
-  postdata(angForm1) {
-      this.dataService.userlogin(angForm1.value.email, angForm1.value.password)
+  login(dataForm) {
+      this.dataService.userlogin(dataForm.value.email, dataForm.value.password)
           .pipe(first())
           .subscribe(
               data => {
+                  // console.log(data);
+                  this.dataService.setUser(data[0])
+                  let token=data[0].id_person;
+                  this.dataService.setToken(token);
                   const redirect = this.dataService.redirectUrl ? this.dataService.redirectUrl : '/inicio';
                   this.router.navigate([redirect]);
               },
-              error => {
+              _error => {
                   alert("User name or password is incorrect")
               });
   }
-  get email() { return this.angForm.get('email'); }
-  get password() { return this.angForm.get('password'); }
+  get email() { return this.userForm.get('email'); }
+  get password() { return this.userForm.get('password'); }
   
 }

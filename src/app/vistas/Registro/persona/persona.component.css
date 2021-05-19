@@ -5,10 +5,9 @@ body{
     align-items: center;
     display: flex;
 }
-
 .formulario{
     margin: auto;
-    background: rgb(14, 23, 102);
+    background: rgb(6, 221, 78);
     transition: .5s ease; 
     border-radius: 5px;
     border:solid black;
@@ -52,7 +51,7 @@ input#cont:hover{
     border-right:solid deepskyblue 5px;
 }
 
-.btn-guardar {
+button{
     background-color: #129fe1;
     width: 90%;
     border-radius: 1px;
@@ -105,81 +104,6 @@ select option:hover{
  }
 select#tipo:hover{
     background-color:rgba(0,4,6,0.5);
-}
-.entrevista{
-    margin: 10px 18px;
-    color: #fff;
-    display: flex;
-}
-#contenedor-boton{
-    margin: 10px 18px;
-    display: flex;
-    text-align: right;
-}
-#contenedor-boton button{
-    border-radius: 20px;
-}
-input[type=checkbox] {
-	visibility: hidden;
-}
-.checkbox-JASoft {
-    margin-left: auto;
-    margin-right: 0%;
-    display: inline-block;
-	position: relative;
-    width: 70px;
-	height: 30px;
-	background: rgb(12, 219, 81);
-	border-radius: 15px;
-	box-shadow: inset 0px 1px 1px rgba(0,0,0,0.6), 0px 1px 0px rgba(255,255,255,0.3);  
-}
-.checkbox-JASoft label {
-    /* aspecto */
-    display: block;
-    width: 34px;
-	height: 20px;
-	border-radius: 17px;
-	box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.35);
-	background: #fcfff4;
-	background: linear-gradient(to top, #fcfff4 0%, #dfe5d7 40%, #b3bead 100%);
-    cursor: pointer;
-    
-    /* Posicionamiento */
-    position: absolute;
-    top: 5px;
-	left: 5px;
-    z-index: 1;
-    
-	/* Comportamiento */
-    transition: all .4s ease;
-    
-    /* ocultar el posible texto que tenga */
-    overflow: hidden;
-    text-indent: 35px;  
-    transition: text-indent 0s;
-}
-.checkbox-JASoft input[type=checkbox]:checked + label {
-	left: auto;
-    right: 5px;
-}
-.checkbox-JASoft:after {
-	content: 'NO';
-	font: 12px/30px Arial, sans-serif;
-	color: rgb(255, 255, 255);
-	position: absolute;
-	right: 10px;
-    z-index: 0;
-	font-weight: bold;
-	text-shadow: 1px 1px 0px rgba(255,255,255,.20);
-}
-.checkbox-JASoft:before {
-	content: 'SÍ';
-	font: 12px/30px Arial, sans-serif;
-	color: rgb(255, 255, 255);
-	position: absolute;
-	left: 10px;
-	z-index: 0;
-	font-weight: bold;
 }
 
 @media only screen and (max-width:700px){

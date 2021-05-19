@@ -25,6 +25,8 @@ import { AdministrarUsuarioComponent } from './vistas/Usuario/administrar-usuari
 
 import {FormsModule,ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { PersonaComponent } from './vistas/Registro/persona/persona.component';
+import { AdministrarPersonaComponent } from './vistas/Registro/administrar-persona/administrar-persona.component';
 
 @NgModule({
   declarations: [
@@ -46,7 +48,9 @@ import { HttpClientModule } from '@angular/common/http';
     NuevoUsuarioComponent,
     LoginComponent,
     DetallePendienteComponent,
-    AdministrarUsuarioComponent
+    AdministrarUsuarioComponent,
+    PersonaComponent,
+    AdministrarPersonaComponent
   ],
   imports: [
     BrowserModule,
