@@ -33,6 +33,8 @@ import { CitasComponent } from './vistas/Perfil/citas/citas.component';
 import { AlunmoManagerComponent } from './vistas/Registro/alunmo-manager/alunmo-manager.component';
 import { DocenteManagerComponent } from './vistas/Registro/docente-manager/docente-manager.component';
 import { AdministrativoMamagerComponent } from './vistas/Registro/administrativo-mamager/administrativo-mamager.component';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
 @NgModule({
   declarations: [
     AppComponent,
@@ -70,7 +72,13 @@ import { AdministrativoMamagerComponent } from './vistas/Registro/administrativo
     ReactiveFormsModule,
     AutocompleteLibModule,
     NgxPaginationModule,
-    NgMultiSelectDropDownModule.forRoot()
+    NgMultiSelectDropDownModule.forRoot(),
+    ServiceWorkerModule.register('ngsw-worker.js', {
+      enabled: environment.production,
+      // Register the ServiceWorker as soon as the application is stable
+      // or after 30 seconds (whichever comes first).
+      registrationStrategy: 'registerWhenStable:30000'
+    })
   ],
   providers: [ServiceService],
   bootstrap: [AppComponent]
