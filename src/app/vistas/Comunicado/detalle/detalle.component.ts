@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { NavigationExtras, Router } from '@angular/router';
+import { comunicadoInterface } from 'src/app/Model/comunicado';
 
 @Component({
   selector: 'app-detalle',
@@ -7,9 +9,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DetalleComponent implements OnInit {
 
-  constructor() { }
+  detalle:comunicadoInterface;
+  navigationExtras:NavigationExtras={
+    state:{
+      value:null
+}
+  };
+  constructor(private router: Router) {
+      const navigation= this.router.getCurrentNavigation();
+      this.detalle = navigation?.extras?.state?.value;
+     }
 
   ngOnInit(): void {
+       if(typeof this.detalle === 'undefined'){
+      this.router.navigate(['lista']);
+    }
   }
-
 }

@@ -2,21 +2,41 @@ body{
     margin-top: 29px;
     min-height: calc(100vh - 154px);
 }
-
+.hover-underline-animation {
+    display: inline-block;
+    position: relative;
+    color: #0087ca;
+  }
+  
+  .hover-underline-animation:after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #0087ca;
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
+  }
+  
+  .hover-underline-animation:hover:after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+  }
 .titulo{
     padding-top: 15px;
     text-align: center;
     font-style: italic;
 }
-#estado{
-    margin-top: auto;
-    margin-right: auto;
-    margin-left: 0;
+.autor{
+    max-width: 330px;
+    margin: auto auto auto 25%;
+    padding-left: 10px;
     background:rgb(39, 155, 233);
 }
-#estado input{
-    padding-right: 5px;
-    max-width: 130px;
+.autor b{
     color: rgb(255, 255, 255);
 }
  .container{
@@ -76,8 +96,6 @@ body{
         padding-left: 10px;
    }
 .btn-contenedor{
-    display: flex;
-    flex-direction: row;
     max-width: 50%;
     margin: auto;
 }
@@ -85,15 +103,49 @@ body{
 #campof{
     max-width: 182px;
 }
-.btn-contenedor2{
-    min-width: 100%;
+#btnEditar{
+    margin-bottom: 1em;
+}
+#btnEditar:hover{
+    color: white;
 }
 #btnPublicar{
     transform: translate(-50%);
-    margin-left: 50%;
+    margin-left: 40%;
     margin-bottom: 1em;
+    background: #00ff62;
+    width: 40%;
+    min-width: 130px;
+    border: none;
+    color: white;
+    font-style: italic;
+    position: relative;
+    padding: 0.5rem 1rem;
+    font-size: 1.2rem;
+    outline: none;
+    overflow: hidden;
 }
 
+.mouse-cursor-gradient-tracking span {
+    position: relative;
+  }
+  
+  .mouse-cursor-gradient-tracking:before {
+    --size: 0;
+    content: '';
+    position: absolute;
+    left: var(--x);
+    top: var(--y);
+    width: var(--size);
+    height: var(--size);
+    background: radial-gradient(circle closest-side, rgb(248, 169, 248), transparent);
+    transform: translate(-50%, -50%);
+    transition: width 0.2s ease, height 0.2s ease;
+  }
+  
+  .mouse-cursor-gradient-tracking:hover:before {
+    --size: 200px;
+  }
 @media only screen and (max-width:700px){
 
     body{
@@ -111,6 +163,11 @@ body{
       }
       #estado input{
         max-width: 90px;
+    }
+    .autor{
+        max-width: 250px;
+        margin: auto;
+        background:rgb(39, 155, 233);
     }
       .btn-contenedor{
         max-width: 80%;

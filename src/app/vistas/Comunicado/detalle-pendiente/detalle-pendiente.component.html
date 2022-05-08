@@ -1,44 +1,69 @@
 <body>
-    <h4 class="titulo">DETALLE COMUNICADO</h4>
-    <div class="btn-contenedor">
-        <div id="estado">
-            <input type="text" value="Redactado:" disabled/>
-        </div>
-        <button type="button" class="btn btn-success" id="btnEditar"><span class="glyphicon glyphicon-edit"></span>Editar</button>
+    <h4 class="titulo">Comunicado Pendiente</h4>
+    <div class="autor">
+        <b>Redactado por:</b>
+        <input type="text" value="{{detalle.redactor}}" disabled/>
     </div>
-    <div class="container" id="detalle">
+    <form class="container" id="detalle"  [formGroup]="conumicado" (ngSubmit)=" updateComunicado(conumicado)">
         <div class="form-row" id="cont1">
             <div class="form-group">
                 <b>Tipo de Comunicado:</b>
-                <input type="text" id="campo" disabled value="Invitación"/>
+                <input type="text" id="campo" disabled value="{{detalle.tipo}}"/>
             </div>
         </div>
         <div class="form-row" id="cont2">
             <div class="form-group">
                 <b>Origen:</b>
-                <input type="text" id="campo" disabled value="Dirección"/>
+                <input type="text" id="campo" disabled value="{{detalle.origen}}"/>
             </div>
                 <div class="form-group" id="campo2">
                     <b>Destinatario:</b>
-                    <input type="text" id="campo" disabled value="1-A, Secundaria"/>
+                    <input type="text" id="campo" disabled value="Varios"/>
                 </div>
             </div>
         <div class="form-colum" id="cont3">
             <div class="form-group">
                 <b>Fecha del Evento:</b>
-                <input type="date" id="campof" disabled value="07/10/2017"/>
+                <input type="date" id="campof"  formControlName="fechae"/>
             </div>
                 <div class="form-group" id="campo2">
                     <b>Hora:</b>
-                    <input type="time" id="campoh" disabled value="10:00"/>
+                    <input type="time" id="campoh"  formControlName="horae"/>
                 </div>
             </div>
         <div class="form-row" id="cont4">
                 <b>Descripción:</b>
-                <textarea id="campo-descripcion" disabled>aqui va la descripcion del comunicado</textarea>
+                <textarea id="campo-descripcion" formControlName="descripcion" ></textarea>
         </div>
+        <div class="btn-contenedor">
+            <button type="submit" class="mouse-cursor-gradient-tracking"id="btnPublicar">Publicar</button>
+        </div>
+    </form>
+    <div class="btn-contenedor">
+        <button type="button" class="btn btn-outline-warning" id="btnEditar">Para Corregir</button>
     </div>
-    <div class="btn-contenedor2">
-        <button type="button" class="btn btn-outline-primary" id="btnPublicar" onclick="location.href ='lista'">Publicar</button>
-    </div>
+
+    
+<!-- seccion de ventana emergente -->
+    
+    <div class="modal fade" id="modal1">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Observaciones</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="close">
+                &times;
+              </button>
+            </div>
+            <div class="modal-body">
+                <div class="form-group has-feedback">
+                   <textarea class="form-control" name="obs" cols="10" rows="3" placeholder="Escriba aqui las observaciones"></textarea>
+                  </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-primary">Enviar</button>
+            </div>
+          </div>
+        </div>
+      </div>
 </body>

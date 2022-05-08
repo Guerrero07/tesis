@@ -1,88 +1,93 @@
 
     <body>
-        <div class="container">
-            <h4 class="titulo">LISTA DE COMUNICADOS</h4>
+            <h4 class="titulo">Lista de Comunicados</h4>
             <div class="form-row" id="contenedor1">
-                <p class="subtitulo" >Buscar</p>
-                <div class="form-group">
-                    <select id="selec" onchange="BuscarTc(this.value)">
+                <label class="subtitulo" >Buscar</label>
+                <div class="col-md-2">
+                    <select class="buscador form-control" id="tipoCom" onchange="BuscarTc(this.value)">
                     <option value="" selected style="display: none">Tipo Comunicado </option>
-                    <option value="citación">Citación</option>
-                    <option value="circular">Circular</option>
-                    <option value="convocatoria">Convotoria</option>
-                    <option value="invitación">Invitación</option>
+                    <option value="citación">CITACION</option>
+                    <option value="circular">CIRCULAR</option>
+                    <option value="convocatoria">CONVOCATORIA</option>
+                    <option value="invitacion">INVITACION</option>
                  </select>
                 </div>
-                <div class="form-group">
-                    <select id="selec2" onchange="BuscarEm(this.value)">
-                        <option value="" selected style="display: none">Origen </option>
-                    <option value="dirección">Dirección</option>
-                    <option value="finanza">Finanza</option>
-                    <option value="consejero">Consejero</option>
-                    <option value="docente">Docente</option>
+                <div class="col-md-2">
+                    <select class="buscador form-control" id="Origen" onchange="BuscarOrigen(this.value)">
+                        <option selected style="display: none">Origen </option>
+                    <option value="dirección">DIRECCION</option>
+                    <option value="finanza">DEP. FINANZIERO</option>
+                    <option value="consejero">DEP. CONSEJERIA</option>
+                    <option value="docente" disabled>DOCENTE</option>
                 </select>
                 </div>
-                <div class="form-group">
-                    <input type="text" id="selec" placeholder="Destinatario" />   
+                <div class="col-md-2 rangos">
+                    <label for="">Pub.</label>
+                    <input type="date" class="buscador form-control" id="fechaP" onchange="BuscarFechaPublicacion(this.value)"/>   
                 </div>
-                <div class="form-group">
-                    <input type="text" id="selec" placeholder="Fecha de Evento" /> 
+                <div class="col-md-2 rangos">
+                    <label for="">Ev.</label>
+                    <input type="date" class="buscador form-control" id="fechaE" onchange="BuscarFechaEvento(this.value)"/> 
                 </div>
+                <!-- <button class="btn btn-primary">Buscar</button> -->
             </div>
         
-            <table class="table table-responsive  table-hover table-striped table-bordered" id="tblComunicado">
+            <table class="table table-responsive table-hover table-striped table-bordered" id="tblComunicado">
                 <thead>
                     <tr>
-                        <th>Tipo de Comunicado</th>
+                        <th class="coll">Tipo de Comunicado</th>
                         <th>Origen</th>
                         <th>Destinatario</th>
-                        <th>Fecha de Publicacion</th>
+                        <th>Fecha de Publicación</th>
                         <th>Fecha de Evento</th>
-                        <!-- <th>Redaccion</th>
-                        <th>Verificado</th> -->
                         <th>Operaciones</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>Invitación</td>
-                        <td>Finanza</td>
-                        <td>1-B, Primaria</td>
-                        <td>14/7/2017</td>
-                        <td>20/7/2017</td>
-                        <!-- <td>Nombre1</td>
-                        <td>Persona1</td> -->
+                    <tr *ngFor="let item of comunicado | paginate: { itemsPerPage: 5, currentPage: p }">
+                        <td class="tipo">{{item.tipo}}</td>
+                        <td class="origen">{{item.origen}}</td>
+                        <td class="varios">{{item.destinatario}}</td>
+                        <td class="publicacion">{{item.fecha_Publicacion}}</td>
+                        <td class="evento">{{item.fecha_Evento}}</td>
                         <td>
                             <div class="btn-group">
-                                <button type="button" class="btn btn-outline-success"  onclick="location.href ='detalles'">Detalles</button>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Citación</td>
-                        <td>Dirección</td>
-                        <td>3-A, Secundaria</td>
-                        <td>24/8/2017</td>
-                        <td>7/8/2017</td>
-                        <td>
-                            <div class="btn-group">
-                                <button type="button" class="btn btn-outline-success" onclick="location.href ='detalles'">Detalles</button>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Circular</td>
-                        <td>Docente</td>
-                        <td>2-A, Primaria</td>
-                        <td>2/9/2017</td>
-                        <td>10/9/2017</td>
-                        <td>
-                            <div class="btn-group">
-                                <button type="button" class="btn btn-outline-success" onclick="location.href ='detalles'">Detalles</button>
+                                <button type="button" class="btn btn-outline-success"  (click)="detalle(item)">Detalles</button>
+                                <button type="button" class="btn btn-outline-danger"  onclick="Eliminar(item.id)">Eliminar</button>
                             </div>
                         </td>
                     </tr>
                 </tbody>
             </table>
-        </div>  
+            <pagination-controls (pageChange)="p = $event"></pagination-controls>
+
+            <div class="btn-group">
+                <!-- <button type="button" class="btn btn-success">Exportar a Excel</button> -->
+                <button type="button" class="btn btn-danger" (click)="getPDF()">Exportar a PDF</button>
+            </div>
+
+<!-- tabla oculta para reportes -->
+
+        <table class="table table-responsive table-hover table-striped table-bordered" id="tablaReport" hidden>
+            <thead>
+                <tr>
+                    <th>Tipo de Comunicado</th>
+                    <th>Origen</th>
+                    <th>Destinatario</th>
+                    <th>Fecha de Publicación</th>
+                    <th>Fecha de Evento</th>
+                    <th>Redaccion</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let item of comunicado">
+                    <td class="tipo">{{item.tipo}}</td>
+                    <td class="origen">{{item.origen}}</td>
+                    <td class="varios">{{item.destinatario}}</td>
+                    <td class="publicacion">{{item.fecha_Publicacion}}</td>
+                    <td class="evento">{{item.fecha_Evento}}</td>
+                    <td class="evento">{{item.redactor}}</td>
+                </tr>
+            </tbody>
+        </table>
     </body>

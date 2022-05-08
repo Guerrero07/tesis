@@ -1,7 +1,7 @@
 .container{
     margin:auto;
     margin-top: 29px;
-    min-height: calc(100vh - 154px);
+    min-height: calc(100vh - 151px);
 }
 .titulo{
     width: 100%;
@@ -21,7 +21,9 @@ thead {
 .btn-group{
     margin-left: 5px;
 }
-
+pagination-controls{
+    text-align: center;
+  }
 @media only screen and (max-width:700px){
     *{
         font-size:  calc(0.5em + 1vw);

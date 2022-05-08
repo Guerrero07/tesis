@@ -1,22 +1,26 @@
 body{
     margin-top: 29px;
-    min-height: calc(100vh - 154px);
+    min-height: calc(100vh - 151px);
+    display:flex;
 }
 .container{
-    min-width: 100%;
-    padding : 40px;
+    min-width: 100% !important;
+   min-height: 100% !important;
+    padding : 0;
+    margin: 0;
     display:flex;
 }
 .item{
     min-width: 30%;
-    padding-right: 40px;
+    padding: 3%;
 }
 .logo img{
     width:100%;
+    height: 100%;
 }
 .tab-content{
     text-align : justify;
-    margin: 2%;
+    margin: 5%;
 }
 
 @media only screen and (max-width:700px){

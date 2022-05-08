@@ -3,6 +3,7 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { first } from 'rxjs/operators';
 import { Router } from '@angular/router';
 import { ServiceService } from '../../Service/service.service';
+import { UserInterface } from 'src/app/Model/user';
 
 @Component({
   selector: 'app-login',
@@ -11,6 +12,7 @@ import { ServiceService } from '../../Service/service.service';
 })
 export class LoginComponent implements OnInit {
   userForm: FormGroup;
+  user:UserInterface
 
   constructor(private fb: FormBuilder, private dataService: ServiceService, private router: Router) {
       this.userForm = this.fb.group({
@@ -20,24 +22,30 @@ export class LoginComponent implements OnInit {
   }
 
   ngOnInit() {
+     if(typeof this.user != null){
+      this.router.navigate(['inicio']);
+    }
   }
   login(dataForm) {
       this.dataService.userlogin(dataForm.value.email, dataForm.value.password)
           .pipe(first())
           .subscribe(
               data => {
-                  // console.log(data);
+ 
                   this.dataService.setUser(data[0])
-                  let token=data[0].id_person;
+                  let token=data[0].rol;
                   this.dataService.setToken(token);
                   const redirect = this.dataService.redirectUrl ? this.dataService.redirectUrl : '/inicio';
                   this.router.navigate([redirect]);
+                  this.locationreload();
               },
               _error => {
-                  alert("User name or password is incorrect")
+                  alert("Usuario o contraseña incorrecto")
               });
   }
-  get email() { return this.userForm.get('email'); }
-  get password() { return this.userForm.get('password'); }
+  locationreload() {
+ 
+    location.reload();      
+    }
   
 }

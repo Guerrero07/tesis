@@ -12,7 +12,10 @@ import { ServiceService } from 'src/app/Service/service.service';
 export class PersonaComponent implements OnInit {
 personaForm: FormGroup;
 
-  constructor(private fb: FormBuilder,private dataService: ServiceService,private router:Router) {
+  constructor(private fb: FormBuilder,
+    private dataService: ServiceService,
+    private router:Router) {
+      
     this.personaForm = this.fb.group({
       nombre: ['', Validators.required],
       paterno: ['', Validators.required],
@@ -23,8 +26,12 @@ personaForm: FormGroup;
 
   ngOnInit() { }
 
-  postdata(angForm1){
-    this.dataService.personaRegister(angForm1.value.nombre,angForm1.value.paterno,angForm1.value.materno,angForm1.value.telefono)
+  postdata(angForm1){-
+    this.dataService.personaRegister(
+        angForm1.value.nombre,
+        angForm1.value.paterno,
+        angForm1.value.materno,
+        angForm1.value.telefono)
     .pipe(first())
     .subscribe(
     data => { 
@@ -33,10 +40,5 @@ personaForm: FormGroup;
     error => {
     });
   }
-
-get email() { return this.personaForm.get('nombre'); }
-get paterno() { return this.personaForm.get('paterno'); }
-get materno() { return this.personaForm.get('materno'); }
-get telefono() { return this.personaForm.get('telefono'); }
 
 }

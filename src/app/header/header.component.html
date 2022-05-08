@@ -11,52 +11,58 @@
     <input type="checkbox" id="btn-menu" autocomplete="off">
     <label for="btn-menu">
       <h3 class="titulo">Menu</h3>
-      <img class="img-responsive"
-        src="../../assets/Imagenes/icon.png">
+      <img class="img-responsive" src="../../assets/Imagenes/icon.png">
     </label>
     <nav class="menu-responsive">
       <ul>
-        <li><a href="inicio">Inicio</a></li>
-        <li *ngIf="isTutor"><a href="novedades">Novedades</a></li>
-        <li id="nosotros"><a>Nosotros <font size="1">&#9660;</font> </a>
+        <li *ngIf="logoutbtn"><a href="inicio">Inicio</a></li>
+        <li *ngIf="rol == '4'"><a href="novedades">Novedades</a></li>
+        <li id="nosotros" *ngIf="logoutbtn"><a>Nosotros <font size="1">&#9660;</font> </a>
           <ul id="sub-menu1">
             <li><a href="historia">Historia</a></li>
-            <li><a href="mision">Mision Vision</a></li>
-            <li><a href="docentes">Plantel Docente</a></li>
+            <li><a href="mision">Misión Visión</a></li>
+            <li><a href="maestros">Plantel Docente</a></li>
           </ul>
         </li>
-        <li id="padres" *ngIf="isTutor" ><a>Informacion de Padres <font size="1">&#9660;</font></a>
+        <li id="padres" *ngIf="rol == '4'"><a>Información de Padres <font size="1">&#9660;</font></a>
           <ul id="sub-menu2">
             <li><a href="circulares">Circulares</a></li>
             <li><a href="citaciones">Citaciones</a></li>
             <li><a href="entrevista">Entrevistas</a></li>
           </ul>
         </li>
-        <li id="comunicado" *ngIf="isSecretaria" ><a>Comunicados <font size="1">&#9660;</font></a>
+        <li id="comunicado" *ngIf="rol == '1' || rol =='3'"><a>Comunicados <font size="1">&#9660;</font></a>
           <ul id="sub-menu3">
             <li><a href="comunicado">Crear Comunicado</a></li>
-            <li><a href="lista">Lista Comunicado</a></li>
-            <li><a href="pendientes">Pendientes</a></li>
+            <li><a href="lista">Lista de Comunicados</a></li>
+            <li *ngIf="rol == '1'"><a href="pendientes">Pendientes</a></li>
+            <li *ngIf="rol == '3'"><a href="correcciones">Para corregir</a></li>
+            <li *ngIf="rol == '1' || rol =='3'"><a href="reportes">Reportes</a></li>
           </ul>
         </li>
-        <li id="usuario" *ngIf="isAdmin" ><a>Usuarios <font size="1">&#9660;</font></a>
+        <li id="registro" *ngIf="rol == '1'"><a>Registros <font size="1">&#9660;</font></a>
+          <ul id="sub-menu5">
+            <li><a href="alumnos">Alumnos</a></li>
+            <li><a href="docentes">Docentes</a></li>
+            <li><a href="administrativos">Adminstrativos</a></li>
+          </ul>
+        </li>
+        <li id="usuario" *ngIf="rol == '1'"><a>Usuarios <font size="1">&#9660;</font></a>
           <ul id="sub-menu4">
             <li><a href="NuevoUsuario">Crear Usuario</a></li>
             <li><a href="adminUsuario">Adminstrar</a></li>
           </ul>
-       </li>
-       <li id="registro" *ngIf="isAdmin" ><a>Registro <font size="1">&#9660;</font></a>
-        <ul id="sub-menu4">
-          <li><a href="NuevoRegistro">Nuevo Registro</a></li>
-          <li><a href="adminPersona">Adminstrar</a></li>
-        </ul>
-     </li>
-          <li id="login" *ngIf="loginbtn"><a href="login">Iniciar Sesion</a>
-          <li id="logout" *ngIf="logoutbtn" (click)="logout()"><a >Cerrar Sesion</a>
-
-    </ul>
-  </nav>
-</header>
+        </li>
+        <li *ngIf="logoutbtn"><a href="Citas">Citas</a></li>
+        <li id="perfil"><a>{{usuario}} <font size="1">&#9660;</font></a>
+          <ul id="sub-menu6">
+            <li id="perfil" ><a href="perfil">Mi perfil</a>
+            <li id="login" *ngIf="loginbtn"><a href="login">Iniciar Sesion</a>
+            <li id="logout" *ngIf="logoutbtn" (click)="logout()"><a>Cerrar Sesion</a>
+          </ul>
+      </ul>
+    </nav>
+  </header>
 </body>
-</html>
 
+</html>

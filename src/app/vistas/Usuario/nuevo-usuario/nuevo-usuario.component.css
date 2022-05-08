@@ -1,6 +1,6 @@
 body{
     margin-top: 29px;
-    min-height: calc(100vh - 154px);
+    min-height: calc(100vh - 151px);
     justify-content: center;
     align-items: center;
     display: flex;
@@ -30,7 +30,7 @@ body{
     padding-left: 2%;
     position: relative;
 }
-#cont {
+.datos {
     background-color: rgba(0,0,0,0);;
     color: white;
     width:84%;
@@ -62,12 +62,9 @@ input#cont:hover{
     font-style: italic;
     color: white;
 }
-    button.btn:hover{
+.btn-guardar:hover{
     background-color: deepskyblue;
     color:white;
-}
-    input.boton:focus{
-    background-color: deepskyblue;
 }
 
 .formulario:hover{
@@ -117,7 +114,7 @@ select#tipo:hover{
     text-align: right;
 }
 #contenedor-boton button{
-    border-radius: 20px;
+    border-radius: 10px;
 }
 input[type=checkbox] {
 	visibility: hidden;
@@ -180,6 +177,10 @@ input[type=checkbox] {
 	left: 10px;
 	z-index: 0;
 	font-weight: bold;
+}
+.contededordias{
+    /* transform: translate(-50%); */
+    display: flow-root;
 }
 
 @media only screen and (max-width:700px){

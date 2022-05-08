@@ -2,7 +2,7 @@
 <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" rel="stylesheet"/>
 <body>
     <div class="container">
-        <button type="button" class="btn btn-success" data-toggle="modal" data-target="#modal1" id="agregar">Agregar</button>
+        <!-- <button type="button" class="btn btn-success" data-toggle="modal" data-target="#modal1" id="agregar">Agregar</button> -->
     </div>
     <div class="container-card">
         <div class="col">
@@ -11,7 +11,7 @@
                 <div class="card-body">
                     <h5 class="card-title">Carlos Daniel Flores Alvarez</h5>
                     <p class="card-text">Informatica</p>
-                    <button *ngIf="logoutbtn" type="button" class="btn btn-warning" id="edit" data-toggle="modal" data-target="#modal1" >Editar</button>
+                    <button *ngIf="logoutbtn" type="button" class="btn btn-warning" id="edit" data-toggle="modal" data-target="#modal1">Editar</button>
                 </div>
             </div>
         </div>
@@ -21,7 +21,7 @@
                 <div class="card-body">
                     <h5 class="card-title">Anahi Sidney Ramirez Poma</h5>
                     <p class="card-text">la Serce</p>
-                    <button type="button" class="btn btn-warning" id="edit">Editar</button>
+                    <button *ngIf="logoutbtn" type="button" class="btn btn-warning" id="edit" data-toggle="modal" data-target="#modal1">Editar</button>
                 </div>
             </div>
         </div>
@@ -57,6 +57,7 @@
         </div>  
     </div>  
 
+<!-------- Ventana flotante ------->
 
     <div class="modal fade" id="modal1">
         <div class="modal-dialog">
@@ -87,11 +88,6 @@
                         <i class="fa fa-address-card form-control-feedback"></i>
                         <input type="text" class="form-control" placeholder="Apellido Materno">
                       </div>
-                     
-                      <div class="form-group has-feedback">
-                        <i class="fa fa-envelope form-control-feedback"></i>
-                        <input type="text" class="form-control" placeholder="Correo Electronico">
-                      </div>
                     
                       <div class="form-group has-feedback">
                         <i class="fa fa-book form-control-feedback"></i>
@@ -114,8 +110,8 @@
 
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-success" data-dismiss="modal" disabled>
-                    Crear usuario</button>
+                    <button type="button" class="btn btn-info" data-dismiss="modal" disabled>
+                    Cerrar</button>
                     <button type="button" class="btn btn-primary">Guardar</button>
                 </div>
             </div>

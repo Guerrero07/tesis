@@ -6,7 +6,22 @@ body{
     width: 50%;
     height: 50%;
 }
+.ngx{
+    /* background: red; */
+    height:400px;
+    width: 400px;
+    text-align: center;
+    margin: auto;
+    background: url("https://cdn.iconscout.com/icon/premium/png-256-thumb/search-3948721-3274303.png") center left no-repeat fit-content      !important; 
+    
+}
 
+:host ::ng-deep.multiselect-dropdown .dropdown-list .item1 .filter-textbox::before{
+ font-family: "Font Awesome 5 Free";    
+  content: "\f002";
+  /* background: url(http://cdn.onlinewebfonts.com/svg/img_197388.png) 5px 5px center left no-repeat !important; */
+  
+  }
 @media all and (max-width:700px){
     body{
         margin-top: 0;

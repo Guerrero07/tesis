@@ -1,5 +1,58 @@
 <body>
-   <div>
-      <img src="../../../../assets/Imagenes/fondocalendario.jpg" alt="" width="100%" height="100%" alt="aqui va a estar la Historia de la institucion ;V">
-   </div>
+  <table class="table table-responsive table-hover table-striped table-bordered">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Usuario</th>
+        <th scope="col">Dia</th>
+        <th scope="col">Hora</th>
+        <th scope="col">Estado</th>
+
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let dias of entrevista">
+        <th scope="row">{{dias.id}}</th>
+        <td>{{dias.username}}</td>
+        <td>{{dias.dia}}</td>
+        <td>{{dias.hora}}</td>
+        <td>{{dias.estado}}</td>
+        <td class="botones">
+          <div class="btn-group">
+            <button type="button" class="btn btn-outline-success">Detalles</button>
+          </div>
+          <div class="btn-group">
+            <button type="button" class="btn btn-outline-danger">Eliminar</button>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <!-- <div class="form-control row g-3">
+    <select class="custom-select" name="nivel" id="" (change)="onSelectNivel($event)">
+      <option value="1">INICIAL</option>
+      <option value="2">PRIMARIA</option>
+      <option value="3">SECUNDARIA</option>
+    </select>
+
+    <select class="custom-select" name="curso" id="" (change)="onSelectCurso($event)">
+      <option value="1">PRIMERO</option>
+      <option value="2">SEGUNDO</option>
+      <option value="3">TERCERO</option>
+      <option value="4">CUARTO</option>
+      <option value="5">QUINTO</option>
+      <option value="6">SEXTO</option>
+    </select>
+    <select class="custom-select" name="turno" id="" (change)="onSelectTurno($event)">
+      <option value="1">MANANA</option>
+      <option value="2">TARDE</option>
+    </select> -->
+
+    <div class="mb-1">
+      <ng-multiselect-dropdown [placeholder]="'custom placeholder'" [settings]="dropdownSettings" [data]="filtroAlumno"
+        [(ngModel)]="selectedItems" (onSelect)="onItemSelect($event)" (onSelectAll)="onSelectAll($event)">
+      </ng-multiselect-dropdown>
+    </div>
+  
+  <div class="ngx">aqui</div>
 </body>

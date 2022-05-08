@@ -1,64 +1,37 @@
 
 <div class="container">
-    <h4 class="titulo">LISTA DE COMUNICADOS PENDIENTES</h4>
+    <h4 class="titulo">Lista de Comunicados Pendientes</h4>
 
     <table class="table table-responsive  table-hover table-striped table-bordered">
         <thead>
             <tr>
+                <th>ID</th>
                 <th>Fecha</th>
                 <th>Origen</th>
                 <th>Destinatario</th>
                 <th>Tipo de comunicado</th>
-                <th>Redaccion</th>
+                <th>Redacción</th>
                 <th>Operaciones</th>
             </tr>
         </thead>
         <tbody>
-            <tr>
-                <td>17/07/2020</td>
-                <td>Finanza</td>
-                <td>1-B, Mañana</td>
-                <td>Invitacion</td>
-                <td>Nombre1</td>
+            <tr *ngFor="let item of comunicado | paginate: { itemsPerPage: 5, currentPage: p }">
+                <td>{{item.id}}</td>
+                <td>{{item.fPublicacion}}</td>
+                <td>{{item.origen}}</td>
+                <td>Varios</td>
+                <td>{{item.tipo}}</td>
+                <td>{{item.redactor}}</td>
                 <td class="botones">
                     <div class="btn-group">
-                        <button type="button" class="btn btn-outline-success" onclick="location.href ='detallePendiente'">Detalles</button>
+                        <button type="button" class="btn btn-outline-success"  (click)="detalle(item)">Detalles</button>
                     </div>
                     <div class="btn-group">
                         <button type="button" class="btn btn-outline-danger" onchange="Eliminar(this.value)">Eliminar</button>
                     </div>
                 </td>
             </tr>
-            <tr>
-                <td>17/07/2020</td>
-                <td>Direccion</td>
-                <td>2-A tarde</td>
-                <td>Circular</td>
-                <td>Nombre2</td>
-                <td>
-                    <div class="btn-group">
-                        <button type="button" class="btn btn-outline-success" onclick="location.href ='detallePendiente'">Detalles</button>
-                    </div>
-                    <div class="btn-group">
-                        <button type="button" class="btn btn-outline-danger" onclick="">Eliminar</button>
-                    </div>
-                </td>
-            </tr>
-            <tr>
-                <td>17/07/2020</td>
-                <td>Docente</td>
-                <td>3-A tarde</td>
-                <td>Circular</td>
-                <td>Nombre3</td>
-                <td>
-                    <div class="btn-group">
-                        <button type="button" class="btn btn-outline-success" onclick="location.href ='detallePendiente'">Detalles</button>
-                    </div>
-                    <div class="btn-group">
-                        <button type="button" class="btn btn-outline-danger"  onclick="">Eliminar</button>
-                    </div>
-                </td>
-            </tr>
         </tbody>
     </table>
+    <pagination-controls (pageChange)="p = $event"></pagination-controls>
 </div>

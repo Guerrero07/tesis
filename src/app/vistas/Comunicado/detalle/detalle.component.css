@@ -30,21 +30,11 @@ b{
     color: black;
     margin-left: 10px;
    }
-   textarea{
-    background-color:transparent;
-    color: black;
-    max-width: 100%;
-    min-width: 98%;
-    min-height: 80px;
-    border:solid rgb(255, 255, 255) 1px;
-    padding-left: 10px;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    line-height: 1em;
+   .texto{
+       color: black;
+       padding: 4px;
    }
-   textarea::placeholder{
-    color: black;
-   }
+
     #cont1, #cont2, #cont3, #cont4{
         width:100%;
         margin: 0%;
@@ -82,15 +72,15 @@ b{
     body{
         margin-top: 0;
     }
-    *{
+    /* *{
         font-size:  calc(0.5em + 1vw);
         line-height: 1em;
-    }
+    } */
     .titulo{
         padding-top: 0;
     }
     .container{
-        width:80%;
+        width:90%;
       }
       #estado input{
         max-width: 90px;

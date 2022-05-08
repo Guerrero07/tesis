@@ -1,6 +1,6 @@
 body{
     margin-top: 29px;
-    min-height: calc(100vh - 154px);
+    min-height: calc(100vh - 151px);
 }
 .list-group{
     position: relative;
@@ -8,6 +8,7 @@ body{
     margin-top: 5%;
     left:89%;
     width:160px;
+    z-index: 1;
 }
 #ico-notificacion{
     display: none;
@@ -37,17 +38,16 @@ body{
 }
 .container{
     position: relative;
-    left: -8%;
-    margin-top: -8%;
-    width: 83%;
+    padding: 0;
+    margin-top: -10%;
     height: 33%;
     display: flex;
 }
 #cont-imagen{
     position: relative;
-    width:30%;
-    height:100%;
-    left: 2%;
+    max-width:270px;
+    max-height:270px;
+
 }
 #cont-imagen img{
 width: 100%;
@@ -56,16 +56,15 @@ object-fit: scale-down;
 }
 .container2{
     position: relative;
-    width: 68%;
+    width: 60%;
     height: 100%;
-    left: 2%;
-    margin: auto;
+    margin: auto auto 0 0;
 }
 #logo{
     position: relative;
     margin: auto;
-    width:25%;
-    height:25%;
+    width:20%;
+    height:20%;
 }
 #logo img{
     width: 100%;
@@ -73,10 +72,26 @@ object-fit: scale-down;
     object-fit: cover;
 }
 .texto{
-    padding-top: 15px;
     font-style:oblique;
     text-align: center;
+    position: relative;
 }
+.texto::after{
+    border-left: 2px solid black;
+    background: white;
+    right: 0;
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    animation: maquinadeescribir 2s infinite steps(24);
+    
+}
+@keyframes maquinadeescribir{
+    from{width: 80%;}
+    to{width: 19%;}
+}
+
 p{
     font-size:  calc(1em + 1vw);
 }
@@ -84,6 +99,7 @@ p{
   background:rgb(15, 85, 214);  
 }
 .navbar2 a{
+    padding-left: 5px;
     color: #fff;
     text-decoration-style: none;
 }

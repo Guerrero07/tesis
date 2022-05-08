@@ -1,7 +1,7 @@
 body{
     margin-top: 29px;
     padding: 0;
-    min-height: calc(100vh - 154px);
+    min-height: calc(100vh - 151px);
 }
 .container{
     margin-left: 1.5rem;
@@ -10,6 +10,9 @@ body{
     width: 150px;
     color: white;
     margin-top: 2%;
+}
+#edit{
+    color: white;
 }
 .container-card{
     width: 100%;

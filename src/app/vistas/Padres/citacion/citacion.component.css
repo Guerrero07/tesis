@@ -2,15 +2,19 @@ body{
     margin-top: 56px;
     min-height: calc(100vh - 154px);
 }
-.card{
-    margin: 2%;
+#miBoton{
+    color: black;
 }
 .card-header{
+    background: rgb(226, 106, 106);
+}
+.visto{
     background: skyblue;
 }
-p{
+.card-body{
     text-align : justify;
 }
+
 @media only screen and (max-width:700px){
 
     body{

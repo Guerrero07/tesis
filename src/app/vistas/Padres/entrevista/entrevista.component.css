@@ -31,28 +31,26 @@ input, select, textarea{
     border: solid 1px;
 }
 #Reservar{
-    width: 50%;
+    width: 30%;
     transform: translate(-50%);
     margin-top: 10px;
     margin-left: 50%;
-    background: rgb(6, 196, 21);
-    border: solid rgb(255, 255, 255) 2px;
-    border-radius: 10px;
+    background: #00ff62;
     color: white;
     font-style: italic;
   }
   #Reservar:hover{
-    background: rgb(3, 77, 9);
+    background: rgb(18, 150, 29);
   }
   
 @media all and (max-width:700px){
     body{
         margin-top: 0;
     }
-    *{
+    /* *{
         font-size:  calc(0.5em + 1vw);
         line-height: 1em;
-    }
+    } */
     .container{
         width: 90%;
     }

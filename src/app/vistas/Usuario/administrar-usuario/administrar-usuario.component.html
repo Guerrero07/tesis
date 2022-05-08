@@ -7,22 +7,18 @@
         <th scope="col">Email</th>
         <th scope="col">Password</th>
         <th scope="col">Rol</th>
-        <th scope="col">Entrevista</th>
-        <th scope="col">Dia Entrevista</th>
         <th scope="col">Estado</th>
-        <th scope="col">Creacion</th>
+        <th scope="col">Fecha Creacion</th>
         <th>Operaciones</th>
       </tr>
     </thead>
     <tbody>
       <tr *ngFor="let user of usuarios">
-        <th scope="row">{{user.id_person}}</th>
+        <th scope="row">{{user.id_usuario}}</th>
         <td>{{user.username}}</td>
         <td>{{user.email}}</td>
         <td>{{user.PASSWORD}}</td>
-        <td>{{user.tipo_usuario}}</td>
-        <td>{{user.entrevista}}</td>
-        <td>{{user.id_entrevista}}</td>
+        <td>{{user.rol}}</td>
         <td>{{user.estado}}</td>
         <td>{{user.fecha_creacion}}</td>
         <td class="botones">

@@ -2,71 +2,111 @@
   <div class="container">
     <form class="formulario" [formGroup]="userForm" (ngSubmit)="createUser(userForm)">
       <h3 id="titulo">NUEVO USUARIO</h3>
-      <div class="form-group"> 
-        <input type="text" id="cont" name="id" formControlName="id">
+      <div class="form-group">
+        <input type="text" class="datos" name="id" value="{{persona.id}}" hidden>
       </div>
       <div class="form-group">
-        <img src="../../../../assets/Imagenes/usuario.png" id="img-usuario"/>
-        <input type="text" id="cont" name="username" formControlName="username">
+        <img src="../../../../assets/Imagenes/usuario.png" id="img-usuario" />
+        <input type="text" class="datos" name="username"
+          value="{{persona.nombre }} {{persona.paterno }} {{persona.materno}}">
       </div>
-        <div class="form-group">
-          <img src="../../../../assets/Imagenes/correo.png" id="img-email"/>
-          <input type="email" id="cont" name="email" formControlName="email" placeholder="Email">
+      <div class="form-group">
+        <img src="../../../../assets/Imagenes/correo.png" id="img-email" />
+        <input type="email" class="datos" name="email" formControlName="email" placeholder="Email">
+      </div>
+      <div class="form-group">
+        <img src="../../../../assets/Imagenes/llave.png" id="img-contraseña" />
+        <input type="password" class="datos" name="password" formControlName="password" placeholder="Contraseña">
+      </div>
+      <div class="form-group">
+        <img src="../../../../assets/Imagenes/entrar.png" id="img-tipo" />
+        <select id="tipo" name="rol" formControlName="rol">
+          <option selected style="display: none">--Seleccione--</option>
+          <option value="1">Adminstrador</option>
+          <option value="2">Docente</option>
+          <option value="3">Secretaria</option>
+          <option value="4">Tutor</option>
+        </select>
+      </div>
+      <div class="entrevista">
+        <label>¿Recibirá entrevista?</label>
+        <div class="checkbox-JASoft">
+          <input type="checkbox" id="checkAvanzado" name="checkvista" formControlName="entrevista"
+            onchange="javascript:showContent()" />
+          <label for="checkAvanzado"></label>
         </div>
-        <div class="form-group">
-          <img src="../../../../assets/Imagenes/llave.png" id="img-contraseña"/>   
-            <input type="password" id="cont" name="password" formControlName="password" placeholder="Contraseña">
+      </div>
+
+      <div id="contenedor-boton" style="display: none;">
+        <button type="button" data-toggle="modal" data-target="#modal1" class="btn btn-info"
+          id="agregar">Agregar</button>
+      </div>
+
+      <button type="submit" class="btn btn-guardar" name="ingresar">Guardar</button>
+      <p class="alert"></p>
+    </form>
+  </div>
+
+
+
+  <div class="modal fade" id="modal1">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title"><b>Días de Entrevista</b></h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="close">
+            &times;
+          </button>
         </div>
-        <div class="form-group">
-          <img src="../../../../assets/Imagenes/entrar.png" id="img-tipo"/>
-          <select id="tipo" name="rol" formControlName="rol">
-            <option value="" hidden>
-              Seleccione
-            </option>
-            <option value="1">Adminstrador</option>
-            <option value="2">Docente</option>
-            <option value="3">Secretaria</option>
-            <option value="4">Tutor</option>
-          </select>
-        </div>
-        <div class="entrevista">
-          <label>¿Recibira entrevista?</label>
-          <div class="checkbox-JASoft">
-            <input type="checkbox" id="checkAvanzado" name="checkvista" formControlName="entrevista" onchange="javascript:showContent()"/>
-            <label for="checkAvanzado"></label>
-          </div>
-        </div>
-  
-        <div id="contenedor-boton" style="display: none;">
-          <button type="button" data-toggle="modal" data-target="#modal1" class="btn btn-success"
-            id="agregar">Agregar</button>
-        </div>
-  
-        <button type="submit" class="btn btn-guardar" name="ingresar">Guardar</button>
-        <p class="alert"></p>
-      </form>
-    </div>
-  
-  
-  
-    <div class="modal fade" id="modal1">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title">Dias de Entrevista</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="close">
-              &times;
-            </button>
-          </div>
-          <div class="modal-body">
-            <p>
-              aqui van a ir los inputs para guardar los dias de entrevista:
-              <input type="number" id="cont" name="identrevista" formControlName="identrevista">
+        <form [formGroup]="dataForm" (ngSubmit)="createEntrevista(dataForm)">
+          <div class="modal-body row g-3">
+            <div class="col-md-6">
+              <label><b>Días disponibles:</b></label>
+              <div class="custom-control custom-checkbox">
+                <input type="checkbox" class="custom-control-input" id="cbxLunes" value="Lunes" (change)="onCheckboxChange($event)">
+                <label class="custom-control-label" for="cbxLunes">Lunes</label>
+              </div>
+              <div class="custom-control custom-checkbox">
+                <input type="checkbox" class="custom-control-input" id="cbxMartes" value="Martes" (change)="onCheckboxChange($event)">
+                <label class="custom-control-label" for="cbxMartes">Martes</label>
+              </div>
+              <div class="custom-control custom-checkbox">
+                <input type="checkbox" class="custom-control-input" id="cbxMiercoles" value="Miercoles" (change)="onCheckboxChange($event)">
+                <label class="custom-control-label" for="cbxMiercoles">Miercoles</label>
+              </div>
+              <div class="custom-control custom-checkbox">
+                <input type="checkbox" class="custom-control-input" id="cbxJueves" value="Jueves" (change)="onCheckboxChange($event)">
+                <label class="custom-control-label" for="cbxJueves">Jueves</label>
+              </div>
+              <div class="custom-control custom-checkbox">
+                <input type="checkbox" class="custom-control-input" id="cbxViernes" value="Viernes" (change)="onCheckboxChange($event)">
+                <label class="custom-control-label" for="cbxViernes">Viernes</label>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <label><b>Horarios Disponibles:</b></label>
+              <div class="contHora">
+                <input type="time" id="time" [(ngModel)]="horas">
+                <button type="button" class="btn btn-outline-success" id="agregarHora">Agregar</button>
+              </div>
+              <div id="contenedorH">{{horas}}</div>
+              <!-- <div formArrayNane="hora">
+              <div *ngFor="let item of getHoras.controls">
+                <div class="contHora">
+                  <input type="time" name="hora" formControlName="hora" (change)="capturar($event)">
+                  <button type="button" class="btn btn-outline-danger remover">Eliminar</button>
+                </div>
+              </div>
+              </div>
+              <button type="button" class="btn btn-outline-success"  (click)="Addhoras()">Agregar</button> -->
+            </div>
           </div>
           <div class="modal-footer">
-            <button type="button" class="btn btn-primary">Guardar</button>
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+            <button type="submit" class="btn btn-primary" >Guardar</button>
           </div>
-        </div>
+        </form>
       </div>
     </div>
-  </body>
+  </div>
+</body>

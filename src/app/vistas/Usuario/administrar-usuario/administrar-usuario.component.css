@@ -1,4 +1,10 @@
 body{
-    margin-top: 56px;
+    margin-top: 29px;
     min-height: calc(100vh - 152px);
+}
+table{
+    width: 90%;
+    margin: auto;
+    padding-top: 50px;
+    border: none;
 }

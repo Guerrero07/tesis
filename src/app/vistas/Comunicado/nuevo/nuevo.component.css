@@ -1,329 +1,343 @@
-body{
+body {
   margin-top: 29px;
-  min-height: calc(100vh - 154px);
+  min-height: calc(100vh - 151px);
 }
-.titulo{
-    text-align:center;
-    padding-top:15px;
-    font-style: italic;
+
+label,p {
+  padding: 5px 5px 0 0;
 }
+
+select {
+  color: black;
+  height: 38px;
+  width: 150px;
+  margin: 0;
+  padding: 0;
+}
+
+.titulo {
+  text-align: center;
+  padding-top: 15px;
+  font-style: italic;
+}
+
 .container {
   margin: 10px auto 20px auto;
   padding: 0 0 15px 0;
-  transition: .5s ease; 
+  transition: .5s ease;
   border-radius: 5px;
-  min-height:calc(100vh - 220px);
+  min-height: calc(100vh - 220px);
   width: 65%;
   min-width: 600px;
   background: rgb(39, 155, 233);
   color: white;
   box-shadow: 5px 5px 5px #999;
 }
-.textos{
-  width: 50%;
-}
-.campos{
-  margin-left: 1%;
-  color: black;
-  min-width: 150px;
- }
+
 /* seccion 1 */
 
-#cont1{
+#cont1 {
   width: 100%;
   margin: 0;
   padding: 2%;
   align-items: center;
   border-bottom-color: rgb(255, 255, 255);
-  border-bottom-style:solid;
+  border-bottom-style: solid;
 }
 
 /* seccion 2 emisor */
 
-#cont2{
+#cont2 {
   flex-direction: row;
-  min-width: 100%;
+  width: 100%;
   margin: 0;
   padding: 2%;
   border-bottom-color: rgb(255, 255, 255);
-  border-bottom-style:solid;
-} 
+  border-bottom-style: solid;
+}
 
-.campo-docente{
-  margin-left: 1%;
-  width: 70%;
-  margin-top: 5px;
- }
 /* seccion 3 destinatario-general */
 
-#comunicado2{
+#comunicado2 {
   flex-direction: column;
   min-width: 100%;
   height: 90px;
   margin: 0;
-  padding:6px 2%;
+  padding: 6px 2%;
   border-bottom-color: rgb(255, 255, 255);
-  border-bottom-style:solid;
+  border-bottom-style: solid;
 }
-.campo-nivel{
-  width: 49%;
-  margin: 10px 0 0 0;
+
+.campo-nivel {
+  width: 21%;
+  margin: 34px 0 0 0;
   display: flex;
+  position: absolute;
 }
-.campo-curso{
-  transform: translate(-50%);
+
+.campo-curso {
+  width: 21%;
   display: flex;
-  width: 49%;
-  margin: 37px 0 0 10%; 
+  margin: 34px 0 0 21%;
+  position: absolute;
+}
+
+.campo-turno {
+  width: 21%;
+  display: flex;
+  margin: 34px 0 0 42%;
+  position: absolute;
 }
 
 /* seccion 3 destinatario-especifico */
 
-#citacion2{
+#citacion2 {
   flex-direction: column;
   height: 90px;
   min-width: 100%;
   margin: 0;
-  padding-top:6px;
-  padding-left: 2%;
+  padding: 6px 0 0 2%;
   border-bottom-color: rgb(255, 255, 255);
-  border-bottom-style:solid;
-}
-.campo-alumno{
-  padding-top: 10px;
-}
-.campo-tutor{
-  padding-top: 37px;
-  margin-left: -80px;
-}
-.selec-alumno{
-  width: 50%;
-  margin-left: 10px;
-}
-.selec-tutor{
-  width: 65%; 
-  margin-left: 10px;
+  border-bottom-style: solid;
 }
 
 /* seccion 4 hora y fecha */
 
-#cont3{
-  min-width: 100%;
+#cont3 {
   margin: 0;
+  padding: 6px 0 0 2%;
+  min-width: 100%;
+  height: 80px;
   border-bottom-color: rgb(255, 255, 255);
-  border-bottom-style:solid;
-}
-.campo-fecha, .campo-hora{
-  padding:15px 0 15px 2%;
-  width: 50%;
+  border-bottom-style: solid;
 }
 
-.campo-hora input{
-  margin-left: 1%;
-  color: black;
+.campo-fecha,
+.campo-hora {
+  width: 40%;
+  height: 100%;
+  flex-direction: column; 
+  margin: 0;
+  padding:15px 100px 0 0;
+
 }
+
+#time,
+#date {
+  padding: 15px 0 15px 2%;
+  min-height: 38px;
+  max-width: 160px;
+}
+
 /* seccion 5 descripcion */
 
-#cont4{
-  height:100%;
+#cont4 {
+  height: 100%;
   min-width: 100%;
   margin: 0;
   padding: 1% 1% 1% 2%;
 }
-select{
-background-color:white;
-border-radius:10px;
-height:35px;
-width:130px;
-}
-#time, #date{
-  border-radius:10px;
-  padding-left:5px;
-  min-height: 35px;
-}
 
-#campoDescripcion{
-  resize:both;
-  min-height:150px;
+#campoDescripcion {
+  resize: both;
+  min-height: 150px;
   max-width: 99%;
   min-width: 98%;
-  border:solid black 2px;
+  border-radius: 5px;
+  border: solid black 1px;
 }
 
 .multiselect {
- margin-top: -4px;
-  width: 340px;
-}
-.selectBox {
-  position: relative;
+  width: max-content;
 }
 
-.selectBox select {
-  width: 100%;
- 
-}
-.overSelect {
-position: absolute;
-left: 0;
-right: -4px;
-top: 0;
-bottom: 0;
-}
-
-#turnoMañana {
-background:white;
-position:absolute;
-border-right: solid 1px rgb(56, 55, 55);
-display: none;
-width:47%;
-left:3%;
-padding-left:10px;
-}
-
-#turnoMañana label {
-display: block;
-}
-#turnoMañana label input {
-  margin-right: 3px;
-  }
-
-#turnoMañana label:hover {
-background-color: #1e90ff;
-}
-
-#turnoTarde {
-background:white;
-position:absolute;
-display: none;
-width:49%;
-left: 50%;
-padding-left:10px;
-}
-
-#turnoTarde label {
-display: block;
-}
-#turnoTarde label input {
-  margin-right: 3px;
-  }
-#turnoTarde label:hover {
-background-color: #1e90ff;
-}
-#contenedorCursos{
-position: relative;;
-z-index:20;
-color: black;
-}
-.btn-contenedor{
+.btn-contenedor {
   width: 100%;
 }
-#btnEnviar{
-  width: 50%;
+
+.filter {
+  display: flex;
+  margin-top: -8px;
+}
+
+.col-md-2 {
+  margin: 0 10px 0 0;
+}
+
+:host ::ng-deep.multiselect-dropdown {
+  width: fit-content;
+  display: block;
+  z-index: 20;
+}
+
+:host ::ng-deep.multiselect-dropdown .dropdown-btn {
+  color: rgb(0, 0, 0);
+  background: #ffff !important;
+  min-width: 14vw;
+}
+
+:host ::ng-deep.multiselect-dropdown .dropdown-list {
+  width: max-content;
+  z-index: 999 !important;
+}
+
+:host ::ng-deep.multiselect-dropdown .dropdown-btn .selected-item-container .selected-item {
+  min-width: max-content;
+  display: inline;
+  z-index: 200 !important;
+}
+
+:host ::ng-deep.multiselect-dropdown .dropdown-list .item2 .no-filtered-data {
+  color: black; 
+}
+
+#btnEnviar {
+  width: 20%;
   transform: translate(-50%);
   margin-top: 10px;
   margin-left: 50%;
-  background: rgb(6, 196, 21);
-  border: solid rgb(255, 255, 255) 2px;
-  border-radius: 10px;
+  border: none;
+  background: #00ff62;
   color: white;
   font-style: italic;
-}
-#btnEnviar:hover{
-  background: rgb(3, 77, 9);
+  position: relative;
+  padding: 0.5rem 1rem;
+  font-size: 1.2rem;
+  outline: none;
+  overflow: hidden;
 }
 
-@media only screen and (max-width:700px){
+.mouse-cursor-gradient-tracking:before {
+  --size: 0;
+  content: '';
+  position: absolute;
+  left: var(--x);
+  top: var(--y);
+  width: var(--size);
+  height: var(--size);
+  background: radial-gradient(circle closest-side, rgb(248, 169, 248), transparent);
+  transform: translate(-50%, -50%);
+  transition: width 0.2s ease, height 0.2s ease;
+}
 
-  body{
-      margin-top: 0;
+.mouse-cursor-gradient-tracking:hover:before {
+  --size: 200px;
+}
+
+@media only screen and (max-width:700px) {
+
+  body {
+    margin-top: 0;
   }
-*{
+
+  /* *{
   font-size:  calc(0.5em + 1vw);
   line-height: 1em;
-}
-.titulo{
-  padding-top: 0;
-}
-  .container{
+} */
+  .titulo {
+    padding-top: 0;
+  }
+
+  .container {
     min-width: 90%;
     padding: 0;
   }
-  .campos{
-    width: 96%;
-    min-width: 90%;
-  }
- .campo-docente{
-   width: 96%;
- }
-  label, b{
+
+  label,
+  b, p{
     margin-left: 10px;
   }
-  .textos{
-    width: 100%;
-  }
-  #cont2{
+.campos{
+  width: 96%;
+  margin-left: 10px;
+}
+  #cont2 {
     flex-direction: column;
     display: inline-flex;
-  } 
-  #citacion1{
-    margin-top: 10px;
-  }
-  #comunicado2{
-    flex-direction: column;
-    height: 100%;
-  }
-  .campo-nivel{
-    width: 100%;
-    flex-direction: column;
-  }
-  .campo-curso{
-    transform: translate(0%);
-    flex-direction: column;
-    width: 100%;
-    margin: 5px 0 5px 0;
-    margin-left: 0;
-  }
-  .multiselect {
-    width: 96%;
-  }
-  .campo-fecha{
-    width: 60%;
-  }
-  .campo-hora{
-    display: flex;
-    flex-direction: column;
-    width: 40%;
   }
 
-  #citacion2{
+  #citacion1 {
+    margin-top: 10px;
+  }
+
+  #comunicado2 {
+    flex-direction: column;
+    height: 100%;
+    margin: 0;
+    padding-right: 10px;
+  }
+  .filter {
+    flex-direction: column;
+  }
+  
+  .col-md-2 {
+    margin-bottom:10px;
+    width: 93%;
+  }
+  .campo-nivel {
+    width: 100%;
+    flex-direction: column;
+    position: relative;
+    margin-top: -10px;
+    padding-left: 10px;
+  }
+
+  .campo-curso,
+  .campo-turno {
+    position: relative;
+    flex-direction: column;
+    width: 100%;
+    margin: 0;
+    padding-left: 10px;
+  }
+  :host ::ng-deep.multiselect-dropdown {
+    max-width: 100% !important;
+    min-width: 100% !important;
+  }
+  .multiselect {
+    min-width: 97%;
+  }
+  .alumnos{
+    max-width: 93%;
+    margin-left: 9px;
+    padding-bottom: 10px;
+  }
+  #cont3{
+    padding: 0;
+    margin: 0;
+  }
+  .campo-fecha {
+    width: 49%;
+    margin: 0;
+    padding-left: 15px;
+  }
+
+  .campo-hora {
+    display: flex;
+    flex-direction: column;
+    width: 49%;
+  }
+  #time,
+  #date {
+    padding: 0;  
+    width: 100%;
+  }
+  #citacion2 {
     flex-direction: column;
     height: 100%;
     min-width: 100%;
     margin: 0;
   }
-  .campo-alumno{
-    padding-top: 5px;
+
+  #campoDescripcion {
+    min-height: 100px;
   }
-  .selec-alumno{
-    width: 94%;
-    margin-left: 0;
+
+  #btnEnviar {
+    margin-bottom: 15px;
   }
-  .campo-tutor{
-    padding-top: 10px;
-    margin-left: 0px;
-  }
-  .selec-tutor{
-    width: 94%;
-    margin-left: 0;
-    margin-bottom: 10px;
-  }
-  #time{
-    max-width: 90%;
-  }
-  #campoDescripcion{
-    min-height:100px;
-  }
-  #btnEnviar{
-   margin-bottom: 15px;
+  :host ::ng-deep.multiselect-dropdown .dropdown-list {
+    width: 100%;
+    z-index: 999 !important;
   }
 }

@@ -1,26 +1,26 @@
 <body>
-    <h4 class="titulo">DETALLE COMUNICADO</h4>
+    <h4 class="titulo">Detalle de Comunicado</h4>
     <div class="container" id="detalle">
         <div class="form-row" id="cont1">
             <div class="form-group">
                 <b>Tipo de Comunicado:</b>
-                <input type="text" id="campo" disabled value="Invitación"/>
+                <input type="text" id="campo" disabled value="{{detalle.tipo}}"/>
             </div>
         </div>
         <div class="form-row" id="cont2">
             <div class="form-group">
                 <b>Redactado por:</b>
-                <input type="text" id="campo" disabled value="Secretaria1"/>
+                <input type="text" id="campo" disabled value="{{detalle.redactor}}"/>
             </div>
                 <div class="form-group" id="campo2">
                     <b>Verifiacdo por:</b>
-                    <input type="text" id="campo" disabled value="El administrador"/>
+                    <input type="text" id="campo" disabled value="{{detalle.verificador}}"/>
                 </div>
             </div>
         <div class="form-row" id="cont3">
             <div class="form-group">
                 <b>Origen:</b>
-                <input type="text" id="campo" disabled value="Dirección"/>
+                <input type="text" id="campo" disabled value="{{detalle.origen}}"/>
             </div>
                 <div class="form-group" id="campo2">
                     <b>Destinatario:</b>
@@ -30,51 +30,16 @@
         <div class="form-colum" id="cont4">
             <div class="form-group">
                 <b>Fecha del Evento:</b>
-                <input type="date" id="campof" disabled value="2017/5/12"/>
+                <input type="date" id="campof" disabled value="{{detalle.fecha_Evento}}"/>
             </div>
                 <div class="form-group" id="campo2">
                     <b>Hora:</b>
-                    <input type="time" id="campoh" disabled value="10:00"/>
+                    <input type="time" id="campoh" disabled value="{{detalle.hora_Evento}}"/>
                 </div>
             </div>
         <div class="form-row" id="cont5">
                 <b>Descripción:</b>
-                <textarea id="campo-descripcion" disabled>aqui va la descripcion del comunicado</textarea>
+                <p class="texto">{{detalle.detalle}}</p>
         </div>
     </div>
-    <div class="modal fade" id="modal1">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title">Datos del Docente</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="close">
-                        &times;
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <p>
-                        Sube una imagen:
-                        <input type="file" name="archivo" style="width: 100%;" >
-                      </p>
-                      <p>
-                        Nombre:
-                        <input type="text" name="nombre" style="width: 100%;">
-                      </p>
-                      <p>
-                        Apellido:
-                        <input type="text" name="apellido"style="width: 100%;">
-                      </p>
-                      <p>
-                        Materia:
-                        <input type="text" name="materia"style="width: 100%;">
-                      </p>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">
-                    Cancelar</button>
-                    <button type="button" class="btn btn-primary">Guardar</button>
-                </div>
-            </div>
-        </div>
-    </div> 
 </body>

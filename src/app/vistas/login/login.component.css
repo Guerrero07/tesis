@@ -1,6 +1,6 @@
 body{
     margin-top: 29px;
-    min-height: calc(100vh - 154px);
+    min-height: calc(100vh - 151px);
     background: url("../../../assets/Imagenes/fondologin.jpg")center center no-repeat;
     background-size: cover;
     -moz-background-size: cover;

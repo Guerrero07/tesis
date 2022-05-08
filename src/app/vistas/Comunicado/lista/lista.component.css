@@ -1,9 +1,6 @@
 body{
     margin-top: 29px;
-    min-height: calc(100vh - 154px);
-}
-.container{
-    min-width: 100%;
+    min-height: calc(100vh - 151px);
 }
 .titulo{
     width: 100%;
@@ -11,29 +8,37 @@ body{
     text-align: center;
     font-style:italic;
 }
-
+.rangos{
+    flex-direction: row;
+    display: flex;
+    position: relative;
+}
+.rangos input{
+    max-width: 150px;
+}
+label{
+margin: 6px 0 5px 5px;
+}
 #contenedor1{
-    margin-top: 1%;
-    width: 100%;
+    margin: auto;
+    width: 90%;
     justify-content: center;
 }
-#selec, #selec2{
-    position: relative;
-    width:160px;
-    height: 30px;
-    margin-left: 10px;
+.buscador{
+   margin-bottom: 10px;
 }
 .table{
-    width: fit-content;
+    width: 90%;
+    margin: 0 0 0 15%;
     border-style: none;
-    margin-left: auto;
-    margin-right: auto;
 }
 
 thead {
      background-color:deepskyblue;
 }
-
+pagination-controls{
+    text-align: center;
+  }
 @media only screen and (max-width:700px){
     body{
         margin-top: 0px;
@@ -46,13 +51,14 @@ thead {
         flex-direction: column;
         margin: auto;
     }
-    #selec, #selec2{
+    .buscador{
         width: 100%;
         margin-left: 0;
        }
  
     .table{
-        width: 100%;
+        width: 90%;
+        margin: auto;
     }
     
 }

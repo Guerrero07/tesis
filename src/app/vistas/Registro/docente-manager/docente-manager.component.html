@@ -1,0 +1,91 @@
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" rel="stylesheet" />
+
+<body>
+  <H2 class="titulo">Registro de Docentes</H2>
+  <div class="row g-3 subtitle">
+    <div class="col-md-5">
+      <i class="fa fa-search form-control-feedback"></i>
+      <input type="text" class="form-control textSearch" placeholder="Buscar...">
+    </div>
+    <div class="col-md-6">
+      <button type="button" class="btn btn-new btn-primary" data-toggle="collapse" data-target="#collapseAlumno"
+      aria-expanded="false">Nuevo Registro</button>
+    </div>
+  </div>
+
+  <div class="collapse" id="collapseAlumno">
+    <form class="row g-3" [formGroup]="docenteForm" (ngSubmit)="addDocente(docenteForm)">
+      <div class="col-md-3">
+        <input type="text" class="form-control" formControlName="ci" placeholder="ci">
+      </div>
+      <div class="col-md-3">
+        <input type="text" class="form-control" formControlName="nombre" placeholder="Nombre(s)" onkeyup="mayus(this);">
+      </div>
+      <div class="col-md-3">
+        <input type="text" class="form-control" formControlName="paterno" placeholder="Ap Paterno" onkeyup="mayus(this);">
+      </div>
+      <div class="col-md-3">
+        <input type="text" class="form-control" formControlName="materno" placeholder="Ap Materno" onkeyup="mayus(this);">
+      </div>
+      <div class="col-md-3">
+        <input type="text" class="form-control" formControlName="telefono" placeholder="Telefono">
+      </div>
+      <div class="col-md-3">
+        <select type="text" class="form-control" formControlName="curso">
+          <option selected style="display: none"> Curso</option>
+          <option value="1">1-PRIMERO</option>
+          <option value="2">2-SEGUNDO</option>
+          <option value="3">3-TERCERO</option>
+          <option value="4">4-CUARTO</option>
+          <option value="5">5-QUINTO</option>
+          <option value="6">6-SEXTO</option>
+        </select>
+      </div>
+      <div class="col-md-3">
+        <select type="text" class="form-control" formControlName="turno">
+          <option selected style="display: none"> Turno</option>
+          <option value="1">MAÑANA</option>
+          <option value="2">TARDE</option>
+        </select>
+      </div>
+    </form>
+  </div>
+
+  <table class="table table-responsive table-hover table-striped table-bordered">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Nro Carnet</th>
+        <th scope="col">Nombre Completo</th>
+        <th scope="col">Materia</th>
+        <th scope="col">FOTO</th>
+        <th>Operaciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let person of docente | paginate: { itemsPerPage: 5, currentPage: p }">
+        <th scope="row">{{person.id}}</th>
+        <td>{{person.carnet}}</td>
+        <td>{{person.nombre}} {{person.paterno}} {{person.materno}}</td>
+        <td>{{person.materia}}</td>
+        <td>
+            <img width="100" src="{{person.foto}}">
+        </td>
+        <td class="botones">
+          <div class="btn-group">
+            <button type="button" class="btn btn-outline-success" (click)="detalle(person)">Ver</button>
+          </div>
+          <div class="btn-group">
+            <button type="button" class="btn btn-outline-warning">Editar</button>
+          </div>
+          <div class="btn-group">
+            <button type="button" class="btn btn-outline-danger">Eliminar</button>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <pagination-controls (pageChange)="p = $event"></pagination-controls>
+
+</body>

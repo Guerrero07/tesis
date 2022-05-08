@@ -77,7 +77,7 @@ header img{
     visibility: hidden;
     z-index: 30;
     transition-property: all;
-    transition-duration: 1s;
+    /* transition-duration: 1s; */
     
 }
    .menu-responsive ul ul li{
@@ -87,8 +87,7 @@ header img{
         z-index: 30;
         width: 200px;
     }
-    #login, #logout{
-        
+    #perfil{
         margin-right: 0;
         margin-left: auto;
     }
@@ -154,19 +153,15 @@ header img{
     .menu-responsive ul ul li a:hover{
         border-left: solid 3px cyan;
     }
-    #nosotros:hover #sub-menu1{
+    #nosotros:hover #sub-menu1,
+    #padres:hover #sub-menu2,
+    #comunicado:hover #sub-menu3,
+    #usuario:hover #sub-menu4, 
+    #registro:hover #sub-menu5,
+    #perfil:hover #sub-menu6{
         display: block;
      }
-     #padres:hover #sub-menu2{
-         display: block;
-      }
-      #comunicado:hover #sub-menu3{
-         display: block;
-      }
-      #usuario:hover #sub-menu4{
-         display: block;
-      }
-      #login, #logout{
+      #perfil{
         margin-right: 0;
         margin-left: 0;
     }

@@ -1,112 +1,109 @@
 <html>
+
 <body>
-    <h4 class="titulo">NUEVO COMUNICADO</h4>
-    <div class="container" id="formulario">
+    <h4 class="titulo">Nuevo Comunicado</h4>
+    <form class="container" id="formulario" [formGroup]="comunForm" (ngSubmit)=" postdata(comunForm)">
         <div class="form-row" id="cont1">
-            <label>Tipo de Comunicado:</label>
-            <select class="campos" onchange="mostrartc(this.value)">
+            <label>Tipo Comunicado:</label>
+            <select class="campos form-control" id="tipo" formControlName="tipo" onchange="mostrartc(this.value)">
                 <option selected style="display: none">Seleccione </option>
-                <option value="citacion">Citación</option>
-                <option value="comunicado">Circular</option>
-                <option value="comunicado">Convotoria</option>
-                <option value="comunicado">Invitación</option>
-             </select>
-        </div>
-        <div class="form-row" id="cont2" style="display: none">
-            <div class="textos">
-                <label>Emitido por: </label>
-                <select class="campos" onchange="mostrar2(this.value);">
-                    <option value="otro">Dirección</option>
-                    <option value="otro">Finanza</option>
-                    <option value="otro">Consejero</option>
-                    <option value="docente">Docente</option>
-                </select>
-            </div>
-            <div class="textos" id="citacion1" style="display: none">
-                <label>Nombre:</label>
-                 <input class="campo-docente" type="text" list="doc" />
-                    <!-- <datalist id="doc">
-                        <option>Docente 1</option>
-                        <option>Docente 2</option>
-                        <option>Docente 3</option>
-                    </datalist> -->
-            </div>
+                <option value="4">CITACION</option>
+                <option value="1">CIRCULAR</option>
+                <option value="2">CONVOCATORIA</option>
+                <option value="3">INVITACION</option>
+            </select>
         </div>
 
-        <div class="form-row" id="comunicado2"  style="display: none;">
-            <b>A continuación Seleccione el destinatario:</b>
-                <div class="campo-nivel">
-                    <label>Nivel:</label>
-                     <select class="campos">
-                        <option selected>Todos</option>
-                        <option>Inicial</option>
-                        <option>Primaria</option>
-                        <option>Secundaria</option>
+        <div class="form-row" id="cont2" style="display: none">
+            <label>Emitido por: </label>
+            <select class="campos form-control" id="origen" formControlName="origen" onchange="mostrar2(this.value);">
+                <option selected style="display: none">Seleccione </option>
+                <option value="La Dirección">La Dirección</option>
+                <option value="Dep. de Finanzas">Dep. de Finanzas</option>
+                <option value="Dep. de Consejería">Dep. de Consejería</option>
+                <option value="Docente" disabled>Docente</option>
+            </select>
+        </div>
+
+        <div class="form-row" id="comunicado2" style="display: none;">
+            <p>A continuación seleccione el destinatario:</p>
+            <div class="campo-nivel">
+                <label>Nivel:</label>
+                <div class="multiselect">
+                    <ng-multiselect-dropdown [placeholder]="'Seleccione'" [settings]="cursoSettings" [data]="niveles"
+                        (onSelect)="NivelSelect($event)" (onDeSelect)="NivelDeSelect($event)"
+                        (onSelectAll)="onNivelAll($event)" (onDeSelectAll)="ofNivelAll()">
+                    </ng-multiselect-dropdown>
+                </div>
+            </div>
+            <div class="campo-curso">
+                <label>Curso:</label>
+                <div class="multiselect">
+                    <ng-multiselect-dropdown [placeholder]="'Seleccione'" [settings]="cursoSettings" [data]="cursos" [disabled]="disabled"
+                        (onSelect)="CursoSelect($event)" (onDeSelect)="CursoDeSelect($event)"
+                        (onSelectAll)="onCursoAll($event)" (onDeSelectAll)="ofCursoAll()">
+                    </ng-multiselect-dropdown>
+                </div>
+            </div>
+            <div class="campo-turno">
+                <label>Turno:</label>
+                <div class="multiselect">
+                    <ng-multiselect-dropdown [placeholder]="'Seleccione'" [settings]="cursoSettings" [data]="turnos"
+                        (onSelect)="TurnoSelect($event)" (onDeSelect)="TurnoDeSelect($event)"
+                        (onSelectAll)="onTurnoAll($event)" (onDeSelectAll)="ofTurnoAll()">
+                    </ng-multiselect-dropdown>
+                </div>
+            </div>
+        </div>
+            <div class="form-row" id="citacion2" style="display: none;">
+                <p>La citación se enviará al tutor del alumno...</p>
+                <div class="filter">
+                    <select class="campos col-md-2 form-control" name="nivel" (change)="onSelectNivel($event)">
+                        <option selected style="display: none">Nivel </option>
+                        <option value="1">INICIAL</option>
+                        <option value="2">PRIMARIA</option>
+                        <option value="3">SECUNDARIA</option>
                     </select>
-                </div>
-                <div class="campo-curso">
-                    <label>Curso:</label>
-                    <div class="multiselect">
-                        <div class="selectBox" onclick="showCheckboxes()">
-                            <select id="cursos" class="campos">
-                                <option selected style="display: none">Seleccione el curso</option>
-                            </select>
-                            <div class="overSelect"></div>
-                        </div>
-                        <div id="contenedorCursos">
-                            <div id="turnoMañana">
-                                <b> <label> <input type="checkbox" id="mañana-todos"/>Mañana </label></b>
-                               <label> <input type="checkbox" class="case"/>Primero </label>
-                                <label> <input type="checkbox" class="case"/>Segundo </label>
-                               <label> <input type="checkbox" class="case"/>Tercero </label>
-                               <label> <input type="checkbox" class="case"/>Cuarto </label>
-                               <label> <input type="checkbox" class="case"/>Quinto </label>
-                               <label> <input type="checkbox" class="case"/>Sexto </label>
-                            </div>
-                            <div id="turnoTarde">
-                                <b> <label> <input type="checkbox" id="tarde-todos"/>Tarde </label></b>
-                                <label> <input type="checkbox" class="case"/>Primero </label>
-                                 <label> <input type="checkbox" class="case"/>Segundo </label>
-                                <label> <input type="checkbox" class="case"/>Tercero </label>
-                                <label> <input type="checkbox" class="case"/>Cuarto </label>
-                                <label> <input type="checkbox" class="case"/>Quinto </label>
-                                <label> <input type="checkbox" class="case"/>Sexto </label>
-                            </div>
-                    </div>  
+
+                    <select class="campos col-md-2 form-control" name="curso" (change)="onSelectCurso($event)">
+                        <option selected style="display: none">Curso </option>
+                        <option value="7">KINDER</option>
+                        <option value="8">PRE-KINDER</option>
+                        <option value="1">1-PRIMERO</option>
+                        <option value="2">2-SEGUNDO</option>
+                        <option value="3">3-TERCERO</option>
+                        <option value="4">4-CUARTO</option>
+                        <option value="5">5-QUINTO</option>
+                        <option value="6">6-SEXTO</option>
+                    </select>
+                    <select class="campos col-md-2 form-control" name="turno" id="" (change)="onSelectTurno($event)">
+                        <option selected style="display: none">Turno </option>
+                        <option value="1">MAÑANA</option>
+                        <option value="2">TARDE</option>
+                    </select>
+                    <div class="ngx">
+                        <ng-multiselect-dropdown [placeholder]="'Alumno'" [settings]="dropdownSettings"
+                            [data]="filtroAlumno" (onSelect)="onItemSelect($event)">
+                        </ng-multiselect-dropdown>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="form-row" id="citacion2" style="display: none;">
-            <b>La citación se enviará al Tutor del...</b>
-            <div class="campo-alumno">
-                <label>Alumno:</label>
-                <select class="selec-alumno" id="alumno" onchange="agTutor(this.value)">
-                    <option value="tutor 1">Alumno 1 </option>
-                    <option value="tutor 2">Alumno 2</option>
-                    <option value="tutor 3">Alumno 3</option>
-               </select>
+            <div class="form-row" id="cont3" style="display:none">
+                <div class="campo-fecha row g-2">
+                    <label>Fecha: </label>
+                    <input class="form-control" id="date" type="date" name="fechae" formControlName="fechae" />
+                </div>
+                <div class="campo-hora row g-2">
+                    <label>Hora: </label>
+                    <input class="form-control" id="time" type="time" name="horae" formControlName="horae" />
+                </div>
             </div>
-            <div class="campo-tutor">
-                <label>Tutor:</label>
-                <input class="selec-tutor" id="tutor" type="text" disabled />
+            <div id="cont4" style="display:none">
+                <label>Descripción</label>
+                <textarea id="campoDescripcion" name="descripcion" formControlName="descripcion"></textarea>
             </div>
-        </div>
-        <div class="form-row" id="cont3" style="display:none">
-            <div class="campo-fecha">
-                <label>Fecha: </label>
-                <input class="campos" id="date" type="date"/>
+            <div class="btn-contenedor" id="boton" style="display:none">
+                <button type="submit" class="mouse-cursor-gradient-tracking" id="btnEnviar">Enviar</button>
             </div>
-            <div class="campo-hora">
-                <label>Hora: </label>
-                <input id="time" type="time"/>
-            </div>
-        </div>
-        <div id="cont4" style="display:none">
-            <label>Descripción</label>
-            <textarea id="campoDescripcion"></textarea>
-        </div>
-        <div class="btn-contenedor" id="boton" style="display:none">
-            <button type="button" class="btn" onclick="location.href ='ComunicadoPendiente'" id="btnEnviar">Enviar</button>
-        </div>
-    </div>
+    </form>
 </body>

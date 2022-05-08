@@ -20,21 +20,16 @@ export class RoleGuard implements CanActivate {
   }
   checkUserLogin(route:ActivatedRouteSnapshot):boolean{
     this.user=this.dataService.getCurrentUser();
-  
-    // console.log('roles necesarios ',route.data.guards);
-    // console.log('rol del usuario ',this.user.tipo_usuario);
 
     for(let numero of route.data.guards){  
   
-      if(this.user.tipo_usuario.includes(numero))
+      if(this.user.rol.includes(numero))
       {
         this.autorice=true
-        // console.log('autorizacion ',this.autorice)
       }
     }
     if(this.autorice===true)
       {
-        // console.log('permiso concedido')
         return true;
       }
       else{

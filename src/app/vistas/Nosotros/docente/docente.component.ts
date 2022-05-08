@@ -15,7 +15,6 @@ export class DocenteComponent{
         dataService.getLoggedInName.subscribe(name => this.changeName(name));
         
         if (this.dataService.isLoggedIn()) {
-            // console.log("loggedin");
             this.loginbtn = false;
             this.logoutbtn = true;
         }
